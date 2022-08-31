@@ -1,0 +1,8 @@
+video, .plyr{
+    width: 600px ;
+    /* border-radius: 11px; */
+}
+
+.page-heading h1 {
+    font-weight: bolder;
+}
