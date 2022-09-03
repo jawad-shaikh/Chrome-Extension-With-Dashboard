@@ -1,10 +1,5 @@
 <?php
-
-include 'config.php';
-
-session_start();
-
-
+include('config/db_connect.php');
 
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
@@ -19,7 +14,6 @@ if (isset($_POST['submit'])) {
       VALUES ('$username', '$email', '$password')";
       $result = mysqli_query($conn, $sql);
       if ($result) {
-        echo "<script>alert('User Registration Completed.')</script>";
         header("Location: login.php");
       } else {
         $error = "Something Wrong Went.";
@@ -37,9 +31,6 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="zxx">
-
-
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>

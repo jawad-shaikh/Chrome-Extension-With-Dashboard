@@ -175,7 +175,7 @@ $(document).ready(function(){
 			
 			$.ajax({
 				type: 'POST',
-				url: 'http://localhost/Loom-main/api/saveRecording.php',
+				url: 'http://localhost/github%20loom/Loom-main/api/saveRecording.php',
 				data: form,
 				processData: false,
 				contentType: false

@@ -1,20 +1,51 @@
+<?php
+include('config/db_connect.php');
+
+session_start();
+if (!isset($_SESSION['userId'])) {
+  header("Location: login.php");
+}
+
+if (isset($_GET['vid'])) {
+  $userId = $_SESSION['userId'];
+  $vid = mysqli_real_escape_string($conn, $_GET['vid']);
+
+  $sql = "SELECT * FROM screen_recordings WHERE user_id = $userId AND video = '$vid'";
+
+  $result = mysqli_query($conn, $sql);
+
+  $video = mysqli_fetch_assoc($result);
+
+  mysqli_free_result($result);
+  mysqli_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
 <?php include "partials/header.php"; ?>
-<style>.plyr{width: 85% !important;}</style>
+<style>
+  .plyr {
+    width: 85% !important;
+  }
+</style>
 <div class="main_content_iner anim">
   <div class="container-fluid p-0">
     <div class="row">
       <div class="col-lg-12">
         <div class="video-outside anim">
-          <!--Video Track-->
-          <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
-            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" class="Videosrc" type="video/mp4" size="1080" />
-            <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
-          </video>
 
-          <!--Video Actions -->
+          <?php if ($video) : ?>
+
+            <video controls>
+              <source src="<?php echo "../api/files/" . $video['video'] ?>" class="Videosrc" type="video/mp4" size="1080" />
+              <a href="<?php echo "../api/files/" . $video['video'] ?>" download>Download</a>
+            </video>
+
+          <?php else : ?>
+            <h4>No such video exists.</h4>
+          <?php endif ?>
 
           <!-- <div class="video-action-parent">
             <div class="video-actions">
@@ -54,8 +85,8 @@
               </span>
             </div> -->
 
-            <!--Comments Area-->
-            <!-- <div class="comment-area-title">
+          <!--Comments Area-->
+          <!-- <div class="comment-area-title">
               <h4>Comments</h4>
             </div>
             <div class="comment-area">
@@ -82,13 +113,14 @@
                 </form>
               </div>
             </div> -->
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
 
 <?php include "partials/footer.php"; ?>
 <script src="js/single.js"></script>
+
 </html>

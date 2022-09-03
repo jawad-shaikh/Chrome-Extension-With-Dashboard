@@ -1,8 +1,22 @@
+<?php
+include('config/db_connect.php');
+
+session_start();
+if (!isset($_SESSION['userId'])) {
+  header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
 <?php include "partials/single-header.php"; ?>
-<style>video, .plyr{width: 600px !important;}</style>
+<style>
+  video,
+  .plyr {
+    width: 600px !important;
+  }
+</style>
 <div class="main_content_iner anim">
   <div class="container-fluid p-0">
     <div class="row">
@@ -62,4 +76,5 @@
 
 <?php include "partials/footer.php"; ?>
 <script src="js/personal.js"></script>
+
 </html>
