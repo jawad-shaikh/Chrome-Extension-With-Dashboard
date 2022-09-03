@@ -1,4 +1,7 @@
-$('.message a').click(function(){
+$('.message').click(function(){
+    
+
+
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 
     const titleName = document.querySelector('.sign-title');
@@ -23,9 +26,9 @@ $('.message a').click(function(){
     }
 
  });
+ 
 
-
- const loginBtn = document.querySelector('.loginBtn');
- loginBtn.addEventListener('click', () => {
-    location.replace('popup.html');
- })
+//  const loginBtn = document.querySelector('.loginBtn');
+//  loginBtn.addEventListener('click', () => {
+//     location.replace('popup.html');
+//  })

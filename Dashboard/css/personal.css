@@ -1,5 +1,5 @@
 video, .plyr{
-    width: 600px ;
+    width: 600px !important;
     /* border-radius: 11px; */
 }
 
