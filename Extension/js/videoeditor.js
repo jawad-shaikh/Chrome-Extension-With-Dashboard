@@ -155,43 +155,36 @@ $(document).ready(function(){
 	
 	// Save on Drive
 	function saveDrive() {
-			downloaded = true;
-			chrome.identity.getAuthToken({ 'interactive': true }, function(token) {
-					if (!token) {
-						return;
-					}
-					$("#share span").html(chrome.i18n.getMessage("saving"));
-					$("#share").css("pointer-events", "none");
-					var metadata = {
-							name: 'video.mp4',
-							mimeType: 'video/mp4'
-					};
-					var superBuffer = new Blob(blobs, {
-							type: 'video/mp4'
-					});
-					var form = new FormData();
-					form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
-					form.append('file', superBuffer);
+		downloaded = true;
 
-					// Upload to Drive
-					var xhr = new XMLHttpRequest();
-					xhr.open('POST', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart');
-					xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-					xhr.responseType = 'json';
-					xhr.onload = () => {
-							var fileId = xhr.response.id;
-							$("#share span").html("Save to Drive");
-							$("#share").css("pointer-events", "all");
-							
-							// Open file in Drive in a new tab
-							chrome.tabs.create({
-									 url: "https://drive.google.com/file/d/"+fileId
-							});
-					};
-					xhr.send(form);
+		$("#share span").html(chrome.i18n.getMessage("saving"));
+		$("#share").css("pointer-events", "none");
+		var metadata = {
+				name: 'video.mp4',
+				mimeType: 'video/mp4'
+		};
+		var superBuffer = new Blob(blobs, {
+				type: 'video/mp4'
+		});
+		var form = new FormData();
+		form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
+		form.append('file', superBuffer);
+		
+		chrome.storage.sync.get(['userId'], function(result) {
+			form.append('userId', result.userId);
+			
+			$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Loom-main/api/saveRecording.php',
+				data: form,
+				processData: false,
+				contentType: false
+			}).done(function(data) {
+				console.log(data);
 			});
+		});
 	}
-	
+
 	// Check when video has been loaded
 	$("#video").on("loadedmetadata", function(){
 

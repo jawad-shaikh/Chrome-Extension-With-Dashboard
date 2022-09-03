@@ -2,7 +2,7 @@ body,
 html {
     margin: 0px;
     width: 314px;
-    height: 510px;
+    height: 550px;
     background-color: #FFF;
 }
 
@@ -413,3 +413,17 @@ label span:hover {
     width: 18px;
     margin-bottom: -3px;
 }
+button#logoutBtn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    transition:200ms linear;
+}
+button#logoutBtn:hover {
+    background:#f6f6f6;
+    transition:200ms linear;
+ }
