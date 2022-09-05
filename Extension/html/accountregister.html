@@ -18,21 +18,19 @@
     <div class="title-wrapper">
     <h1 class="sign-title">Login to Loom!</h1>
     </div>
-    <div class="error-message" style="text-align: center; margin: auto; color: rgb(255 4 4);"></div>
-    <div class="success-message" style="text-align: center; margin: auto; color: green;"></div>
         <div class="login-page">
-    <div class="form">
-      <form class="register-form" style="display: none;">
-                <input type="text" placeholder="Your Name" id="username">
-                <input type="email" placeholder="Email Address" id="useremail" >  
-                <input type="password" placeholder="Create a password" id="userpass" >
-                <button class="accountBtn" id="savedata">Create</button>
+            <div class="form">
+              <form class="register-form" style="display: none;">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Create a password">
+                <button class="accountBtn">Create</button>
                 <p class="message">Already registered? <a href="#">Sign In</a></p>
               </form>
-              <form class="login-form" >
-                <input type="email" placeholder="Email Address" id="loginemail" >
-                <input type="password" placeholder="Your Password" id="loginpass" >
-                <button class="loginBtn" id="checkrecords">login</button>
+              <form class="login-form" style="">
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Your Password">
+                <button class="loginBtn">login</button>
                 <p class="message">Not registered? <a href="#">Create an account</a></p>
               </form>
             </div>
@@ -43,8 +41,6 @@
          <!--Jquery-->
           <script src="../js/jquery.min.js"></script>
          <!--Login-->
-         <script src="../js/login.js"></script>
-         <!--SignUp : fetch user data-->
-          <script src="../js/fetch-user.js"></script>
-        </body>
+          <script src="../js/login.js"></script>
+    </body>
 </html>

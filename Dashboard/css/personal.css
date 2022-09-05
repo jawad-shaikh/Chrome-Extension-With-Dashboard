@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+video, .plyr{
+    width: 600px ;
+    /* border-radius: 11px; */
+}
+>>>>>>> parent of b16a484 (Dashboard Extension & api)
 
 .page-heading h1 {
     font-weight: bolder;

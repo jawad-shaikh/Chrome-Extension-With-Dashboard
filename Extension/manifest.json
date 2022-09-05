@@ -20,7 +20,7 @@
   },
   "browser_action": {
     "default_icon": "assets/extension-icons/logo-32.png",
-    "default_popup": "html/accountregister.html"
+    "default_popup": "html/popup.html"
   },
   "icons": {
     "16": "assets/extension-icons/logo-16.png",
@@ -46,8 +46,7 @@
     "identity",
     "https://www.googleapis.com/*",
     "downloads.shelf",
-    "file://*",
-    "storage"
+    "file://*"
   ],
   "web_accessible_resources": [
     "html/camera.html",

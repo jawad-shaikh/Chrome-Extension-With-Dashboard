@@ -4,13 +4,6 @@ $(document).ready(function(){
     // Set up custom dropdowns
     $("#camera-select").niceSelect();
     $("#mic-select").niceSelect();
-
-    // logout function
-    $("#logoutBtn").on("click", function(e){
-        chrome.storage.sync.remove("userId", function() {
-            window.close();
-        });
-    });
     
     // Get default settings (set by the user)
     chrome.storage.sync.get(null, function(result) {

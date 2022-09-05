@@ -90,6 +90,7 @@ if (commentBtn !== null) {
   });
 }
 
+<<<<<<< HEAD
 function getReply(replyBtn){
       const form = replyBtn.parentElement.querySelector('.form-comment.second');
       const replyBox = replyBtn.parentElement.querySelector('.reply-box');
@@ -177,7 +178,18 @@ function prevent(e){
   e.preventDefault();
 }
 
+=======
+// Change the second argument to your options:
+// https://github.com/sampotts/plyr/#options
+const player = new Plyr("video", {
+  captions: {
+    active: true,
+  },
+});
+>>>>>>> parent of b16a484 (Dashboard Extension & api)
 
+// Expose player so it can be used from the console
+window.player = player;
 
 function complete() {
   tl.to(".anim", { clearProps: "all" });
