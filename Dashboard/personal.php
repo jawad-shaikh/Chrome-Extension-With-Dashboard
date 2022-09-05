@@ -10,7 +10,7 @@ if (!isset($_SESSION['userId'])) {
 <!DOCTYPE html>
 <html lang="zxx">
 
-<?php include "partials/single-header.php"; ?>
+<?php include "partials/header.php"; ?>
 <style>
   video,
   .plyr {

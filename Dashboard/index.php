@@ -23,14 +23,7 @@ mysqli_close($conn);
 <!DOCTYPE html>
 <html lang="zxx">
 
-<?php include "partials/single-header.php"; ?>
-
-<style>
-  video,
-  .plyr {
-    width: 600px !important;
-  }
-</style>
+<?php include "partials/header.php"; ?>
 <div class="main_content_iner anim">
   <div class="container-fluid p-0">
     <div class="row">
@@ -53,6 +46,9 @@ mysqli_close($conn);
                   <a href="single.php?vid=<?php echo $video['video'] ?>" class="video-goto">
                     <ion-icon name="play-outline"></ion-icon>
                   </a>
+                  <div class="video-title">
+                    <span>Video - 01</span>
+                  </div>
                   <div class="date-area">
                     <span><?php echo $video['created_at'] ?></span>
                   </div>

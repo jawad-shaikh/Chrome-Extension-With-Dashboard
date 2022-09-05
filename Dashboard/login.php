@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
     <span>O</span>
     <span>M</span>
   </div>
-  <div class="loader-back"></div>
+
   <!--Loader-->
 
   <!--Header-->

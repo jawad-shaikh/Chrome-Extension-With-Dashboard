@@ -1,14 +1,16 @@
 .plyr {
   width: 85% !important;
 }
-
+video {
+  width: 280px;
+}
 .video-goto {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -42,10 +44,7 @@
     flex-wrap: wrap !important;
   }
 
-  video, .plyr {
-    width:100% !important;
-    margin: 0 !important;
-  }
+
 
 }
 
@@ -64,5 +63,10 @@
 @media (max-width: 1440px){
   .child-wrapper{
     width: 100%;
+  }
+}
+@media (max-width:610px){
+  video{
+    width: 100% !important;
   }
 }

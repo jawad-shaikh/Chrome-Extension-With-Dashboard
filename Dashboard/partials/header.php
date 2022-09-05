@@ -20,7 +20,7 @@
     <span>O</span>
     <span>M</span>
   </div>
-  <div class="loader-back"></div>
+
   <!--/Preloeader-->
 
   <?php include "sidebar.php"; ?>
@@ -57,16 +57,20 @@
                       <ion-icon name="eye-outline"></ion-icon>3 Views
                     </span>
                   </li> -->
-                <li class="anim">
-                  <a class="nav-link-notify onmediatab downloadlink" href="#">
-                    <ion-icon name="download-outline"></ion-icon>
-                  </a>
-                </li>
-                <li class="anim">
-                  <a class="nav-link-notify onmediatab copylink" href="#">
-                    <ion-icon name="link-outline"></ion-icon>
-                  </a>
-                </li>
+                  <?php
+                    if(basename($_SERVER['PHP_SELF']) == 'single.php') {                    
+                    ?>
+                     <li class="anim">
+                        <a class="nav-link-notify onmediatab downloadlink" href="#">
+                          <ion-icon name="download-outline"></ion-icon>
+                        </a>
+                      </li>
+                      <li class="anim">
+                        <a class="nav-link-notify onmediatab copylink" href="#">
+                          <ion-icon name="link-outline"></ion-icon>
+                        </a>
+                      </li>
+                    <?php } ?>
               </div>
             </div>
           </div>
