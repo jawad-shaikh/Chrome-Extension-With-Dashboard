@@ -1211,7 +1211,7 @@ table.dataTable tbody td {
   height: 50px;
   line-height: 50px;
   background-color: #fff;
-  border: 1px solid #eee1e2;
+  /* border: 1px solid #eee1e2; */
   padding: 10px 25px;
   color: #7e7172;
   font-weight: 500;
@@ -1858,15 +1858,21 @@ th:focus {
   height: 50px;
   line-height: 50px;
   padding: 10px 20px;
-  border: 1px solid #F1F3F5;
+  /* border: 1px solid #F1F3F5; */
   color: #707070;
   font-size: 14px;
   font-weight: 500;
   background-color: #fff;
   width: 100%;
   border-radius: 11px;
-  padding: 30px 20px;
+  /* padding: 30px 20px; */
   box-shadow: 5px 5px 15px rgb(0 0 0 / 8%) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex !important;
+  line-height: 30px;
+  border: none !important;
 }
 
 /* line 1270, G:/admin_project/6 admin/marketing/scss/_reset.scss */
@@ -12935,6 +12941,7 @@ a.col-button {
 
 .two-col-videos {
   width: 1200px;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -13137,7 +13144,6 @@ a.signBtn {
 
 body{
   overflow-x:hidden !important;
-<<<<<<< HEAD
 }
 .col-second, 
 .col-first{
@@ -13183,6 +13189,4 @@ span.date{
   background: #f6f6f6;
   padding: 15px;
   border-radius: 10px;
-=======
->>>>>>> parent of b16a484 (Dashboard Extension & api)
 }

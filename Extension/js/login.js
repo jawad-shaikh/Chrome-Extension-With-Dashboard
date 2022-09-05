@@ -1,4 +1,7 @@
-$('.message a').click(function(){
+$('.message').click(function(){
+    
+
+
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 
     const titleName = document.querySelector('.sign-title');
@@ -23,8 +26,8 @@ $('.message a').click(function(){
     }
 
  });
+ 
 
-<<<<<<< HEAD
 //  const loginBtn = document.querySelector('.loginBtn');
 //  loginBtn.addEventListener('click', () => {
 //     location.replace('popup.html');
@@ -34,10 +37,3 @@ $('.message a').click(function(){
 setTimeout(() => {
     $('.login-splash').fadeOut();
 }, 1000)
-=======
-
- const loginBtn = document.querySelector('.loginBtn');
- loginBtn.addEventListener('click', () => {
-    location.replace('popup.html');
- })
->>>>>>> parent of b16a484 (Dashboard Extension & api)
