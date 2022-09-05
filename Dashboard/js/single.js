@@ -4,8 +4,7 @@ const copylink = document.querySelector('.copylink');
 
 const videoLink = document.querySelector('.Videosrc');
 
-// Change the second argument to your options:
-// https://github.com/sampotts/plyr/#options
+//player js 
 const player = new Plyr("video", {
     captions: {
       active: true,
@@ -20,9 +19,16 @@ const player = new Plyr("video", {
   });
 
 copylink.addEventListener('click', () => {
-    navigator.clipboard.writeText(videoLink.getAttribute('src'));
-})
+    let path = videoLink.getAttribute('src');
+    path = path.substring(2, path.length);
 
+    const currentUrl = 'http://localhost/github%20loom/Loom-main';
+    const finalUrl = currentUrl + path;
+    copylink.setAttribute('src', finalUrl);
+    navigator.clipboard.writeText(copylink.getAttribute('src'));
+
+})
+// Download Link 
 downloadlink.setAttribute('download', "video");
 downloadlink.setAttribute('href', videoLink.getAttribute('src'));
 

@@ -1,8 +1,22 @@
+<?php
+include('config/db_connect.php');
+
+session_start();
+if (!isset($_SESSION['userId'])) {
+  header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
-<?php include "partials/single-header.php"; ?>
-<style>video, .plyr{width: 600px !important;}</style>
+<?php include "partials/header.php"; ?>
+<style>
+  video,
+  .plyr {
+    width: 600px !important;
+  }
+</style>
 <!--Main Section-->
 <div class="main_content_iner anim">
   <div class="container-fluid p-0">
@@ -50,7 +64,7 @@
 
               <div class="col-second">
                 <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" class="video2">
-                   <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080" />
+                  <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080" />
                   <a href="#" class="videoDownload" download>Download</a>
                 </video>
               </div>
@@ -66,4 +80,5 @@
 <?php include "partials/footer.php"; ?>
 
 <script src="js/starred.js"></script>
+
 </html>

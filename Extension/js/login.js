@@ -32,3 +32,8 @@ $('.message').click(function(){
 //  loginBtn.addEventListener('click', () => {
 //     location.replace('popup.html');
 //  })
+
+
+setTimeout(() => {
+    $('.login-splash').fadeOut();
+}, 1000)

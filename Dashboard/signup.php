@@ -1,10 +1,5 @@
 <?php
-
-include 'config.php';
-
-session_start();
-
-
+include('config/db_connect.php');
 
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
@@ -19,7 +14,6 @@ if (isset($_POST['submit'])) {
       VALUES ('$username', '$email', '$password')";
       $result = mysqli_query($conn, $sql);
       if ($result) {
-        echo "<script>alert('User Registration Completed.')</script>";
         header("Location: login.php");
       } else {
         $error = "Something Wrong Went.";
@@ -37,9 +31,6 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="zxx">
-
-
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
@@ -60,7 +51,6 @@ if (isset($_POST['submit'])) {
     <span>O</span>
     <span>M</span>
   </div>
-  <div class="loader-back"></div>
   <!--Loader-->
 
   <!--Header-->
@@ -75,7 +65,7 @@ if (isset($_POST['submit'])) {
     <div class="modal-content cs_modal">
       <div class="modal-header justify-content-center theme_bg_1">
         <h5 class="modal-title text_white" style="text-align: left">
-          Sign in to Loom
+          Sign up to Loom
         </h5>
       </div>
       <div class="modal-body">
@@ -100,7 +90,7 @@ if (isset($_POST['submit'])) {
           </div>
           <p>
             Already have an account?
-            <a data-toggle="modal" data-target="#sing_up" data-dismiss="modal" href="login.php">Log in</a>
+            <a href="login.php">Log in</a>
           </p>
         </form>
       </div>

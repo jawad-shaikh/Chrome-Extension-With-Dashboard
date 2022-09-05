@@ -1,6 +1,5 @@
 <?php
-
-include 'config.php';
+include('config/db_connect.php');
 
 if (isset($_POST['submit'])) {
   $email = $_POST['email'];
@@ -45,7 +44,7 @@ if (isset($_POST['submit'])) {
     <span>O</span>
     <span>M</span>
   </div>
-  <div class="loader-back"></div>
+
   <!--Loader-->
 
   <!--Header-->

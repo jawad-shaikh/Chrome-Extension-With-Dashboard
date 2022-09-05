@@ -175,12 +175,16 @@ $(document).ready(function(){
 			
 			$.ajax({
 				type: 'POST',
-				url: 'http://localhost/Loom-main/api/saveRecording.php',
+				url: 'http://localhost/github%20loom/Loom-main/api/saveRecording.php',
 				data: form,
 				processData: false,
 				contentType: false
 			}).done(function(data) {
-				console.log(data);
+				if(data !== ''){
+					const saveBtn = document.querySelector('#share span');
+					saveBtn.innerText = 'Saved!';
+					navigator.clipboard.writeText(data);
+				}
 			});
 		});
 	}
@@ -273,3 +277,7 @@ $(document).ready(function(){
 	$("#share span").html(chrome.i18n.getMessage("save_drive"));
 	$("#apply-trim").html(chrome.i18n.getMessage("apply"));
 });
+
+const titleInput = document.querySelector('.title-input');
+titleInput.value =  new Date();
+titleInput.select();

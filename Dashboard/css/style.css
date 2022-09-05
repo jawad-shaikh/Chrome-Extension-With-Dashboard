@@ -12666,6 +12666,9 @@ span.userprofile {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  position: absolute;
+  bottom: 90px;
+  left: -40px;
 }
 
 .comment-x {
@@ -12673,6 +12676,7 @@ span.userprofile {
   gap: 10px;
   margin: 50px 0px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .mobile-view-links {
@@ -12774,7 +12778,7 @@ span.comment-button-box {
   width: 120px;
   justify-content: center;
   align-items: center;
-  margin-left:30px;
+  /* margin-left:30px; */
 }
 
 span.comment-button-box ion-icon.md.hydrated {
@@ -12795,17 +12799,18 @@ button.comment-button {
   padding: 5px;
 }
 
-.comment-interaction form {
-  margin-left: 35px;
+.form-comment {
+  /* margin-left: 35px; */
   justify-content: center;
   align-items: center;
   background: #F5F6FF;
   border-radius: 25px;
   border: 1px solid #d3d3d3;
   display: none;
+  margin-top: 15px;
 }
 
-.comment-interaction form input[type="text"] {
+.form-comment input[type="text"] {
   width: 100%;
   height: 40px;
   background: transparent;
@@ -12815,7 +12820,7 @@ button.comment-button {
   border-radius: 25px;
 }
 
-.comment-interaction form button {
+.form-comment button {
   height: 40px;
   border: none;
   border-radius: 50%;
@@ -12826,7 +12831,8 @@ button.comment-button {
   background: #dde3fe;
 }
 
-.comment-interaction form.form-comment.active {
+form.form-comment.active,
+.form-comment.second.active {
   display: inline-flex !important;
 }
 
@@ -12939,7 +12945,8 @@ a.col-button {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap:10px;
+  gap:20px;
+  flex-wrap: wrap;
 }
 .container-wrapper {
   display: flex;
@@ -13113,10 +13120,6 @@ a.signBtn {
     flex-wrap: wrap !important;
   }
 
-  video, .plyr {
-    width:100% !important;
-    margin: 0 !important;
-  }
 
 }
 
@@ -13152,10 +13155,38 @@ body{
 
 
 .date-area span {
-  padding: 10px;
+  /* padding: 10px; */
   display: block;
-  background: #4c6ef8;
+  /* background: #4c6ef8; */
   border-radius: 11px;
-  color: #fff;
-  margin-top: 10px;
+  color: #111;
+  margin-top: 1px;
+}
+
+.video-title {
+    margin-top: 10px;
+    font-weight: bolder;
+}
+.reply-btn{
+  display: inline-block;
+  margin-top: 5px;
+  color:#111;
+  padding: 5px 10px;
+  border-radius: 25px;
+  background: #748ef930;
+}
+
+span.date{
+  display: block;
+}
+.comment-username{
+  display: inline-block;
+}
+.ml-20{
+  margin-left: 100px;
+}
+.reply-to {
+  background: #f6f6f6;
+  padding: 15px;
+  border-radius: 10px;
 }

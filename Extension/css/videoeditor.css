@@ -241,6 +241,16 @@ h2 {
     transform: translate(-50%,-50%);
     font-family: Roboto;
 }
+
+input.title-input{
+    width: 85%;
+    padding:15px 10px;
+    border: 1px solid #d7d7d7;
+    outline:none;
+    background: #fff;
+    border-radius: 4px;
+}
+
 #trim-label {
     margin-top: 90px;
 }
