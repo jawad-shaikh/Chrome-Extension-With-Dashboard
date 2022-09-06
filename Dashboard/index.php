@@ -1,5 +1,5 @@
 <?php
-include('config/db_connect.php');
+include('../config/db_connect.php');
 
 session_start();
 if (!isset($_SESSION['userId'])) {
@@ -47,7 +47,8 @@ mysqli_close($conn);
                     <ion-icon name="play-outline"></ion-icon>
                   </a>
                   <div class="video-title">
-                    <span>Video - 01</span>
+                    <!-- <span><?php echo $video['title'] ?></span> -->
+                    <span><?php echo substr($video['title'], 0, 35) . "..."; ?></span>
                   </div>
                   <div class="date-area">
                     <span><?php echo $video['created_at'] ?></span>

@@ -1,6 +1,7 @@
 <?php
 
-include "config.php";
+include "../config/db_connect.php";
+
 $l_email = $_POST["login_email"];
 $l_pass = $_POST["login_pass"];
 

@@ -159,6 +159,7 @@ $(document).ready(function(){
 
 		$("#share span").html(chrome.i18n.getMessage("saving"));
 		$("#share").css("pointer-events", "none");
+		var title = $("#titleText").val();
 		var metadata = {
 				name: 'video.mp4',
 				mimeType: 'video/mp4'
@@ -169,13 +170,14 @@ $(document).ready(function(){
 		var form = new FormData();
 		form.append('metadata', new Blob([JSON.stringify(metadata)], {type: 'application/json'}));
 		form.append('file', superBuffer);
+		form.append('title', title);
 		
 		chrome.storage.sync.get(['userId'], function(result) {
 			form.append('userId', result.userId);
 			
 			$.ajax({
 				type: 'POST',
-				url: 'http://localhost/github%20loom/Loom-main/api/saveRecording.php',
+				url: 'http://localhost/Loom/api/saveRecording.php',
 				data: form,
 				processData: false,
 				contentType: false

@@ -25,7 +25,6 @@ function redirectloginpage() {
 $(document).ready(function(){
 $("#savedata").on("click",function(){
     
-  console.log('me');
     var username = $("#username").val();
     var useremail = $("#useremail").val();
     var userpass = $("#userpass").val();
@@ -35,7 +34,7 @@ $("#savedata").on("click",function(){
     }else{
       
       $.ajax({
-        url: "http://localhost/Loom-main/Extension/Php/register.php",
+        url: "http://localhost/Loom/api/register.php",
         type : "POST",
         data : {user_name:username, user_email: useremail, user_pass: userpass},
         success : function(data){
@@ -71,7 +70,6 @@ $("#savedata").on("click",function(){
 $("#checkrecords").on("click",function(event){
   
   event.preventDefault();
-  console.log('me');
   var loginemail = $("#loginemail").val();
   var  loginpass = $("#loginpass").val();
   
@@ -80,7 +78,7 @@ $("#checkrecords").on("click",function(event){
       $(".success-message").slideUp();
     }else{
   $.ajax({
-    url : "http://localhost/Loom-main/Extension/Php/login.php",
+    url : "http://localhost/Loom/api/login.php",
     type : "POST",
     data : {login_email:loginemail, login_pass: loginpass},
     success : function(sth){
