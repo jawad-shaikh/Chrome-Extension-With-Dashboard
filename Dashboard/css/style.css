@@ -12666,9 +12666,6 @@ span.userprofile {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  position: absolute;
-  bottom: 90px;
-  left: -40px;
 }
 
 .comment-x {

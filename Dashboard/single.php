@@ -68,8 +68,9 @@ if (isset($_GET['vid'])) {
                   <ion-icon name="chatbubble-outline"></ion-icon><button class="comment-button">Comment</button>
                 </span>
                 <form class="form-comment">
-                  <input type="text" class="comment-input" id="commentInput" value="j" placeholder="Comment.." />
-                  <input type="hidden" id="userIdInCommentForm" value="<?= $video['user_id'] ?>" />
+                  <input type="text" class="comment-input" id="commentInput" placeholder="Comment.." />
+                  <input type="hidden" class="userID" value="<?= $_SESSION['userId'] ?>">
+                  <input type="hidden" class="videoID" value="<?= $video['id'] ?>" />
                   <button type="submit" class="comment-submit" id="publishComment">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                   </button>
@@ -77,7 +78,7 @@ if (isset($_GET['vid'])) {
               </div>
 
               <div class="comment-area">
-                <div class="comment-x">
+                <div class="comment-x" >
                   <span class="userprofile">R</span>
                   <span class="comment-details">
                     <h4 class="comment-username">
@@ -86,15 +87,6 @@ if (isset($_GET['vid'])) {
                     <span>at 0:02</span>
                     <div class="comment-text">Hi, What's up!</div>
                     <span class="date">5 days ago</span>
-                    <span class="comment-button-box reply-box" id="area" onclick="getReply(this)">
-                      <ion-icon name="arrow-undo-outline"></ion-icon><button class="comment-button reply-btn">Reply</button>
-                    </span>
-                    <form class="form-comment second" onsubmit="prevent(event)">
-                      <input type="text" class="comment-input reply-input" placeholder="Reply.." />
-                      <button type="submit" class="comment-submit" onclick="postReply(this)">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                      </button>
-                    </form>
                   </span>
                 </div>
               </div>
