@@ -18,6 +18,20 @@ if (isset($_POST['submit'])) {
   }
 }
 
+if (isset($_GET['token'])) {
+  $token = $_GET['token'];
+
+  $sql = "SELECT * FROM user WHERE token ='{$token}'";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    $data = mysqli_fetch_assoc($result);
+    session_start();
+    $_SESSION['userId'] = $data["user_id"];
+    $_SESSION['userName'] = $data["user_name"];
+    header("Location: index.php");
+  }
+}
+
 ?>
 
 <!DOCTYPE html>

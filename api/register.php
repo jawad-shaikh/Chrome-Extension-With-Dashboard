@@ -12,8 +12,8 @@ $res = mysqli_query($conn, $sql1);
 if (mysqli_num_rows($res) > 0) {
   echo 0;
 } else {
-  $sql = "INSERT INTO `user`(`user_name`, `user_email`, `user_pass`) VALUES 
-('{$u_name}','{$u_email}','{$u_pass}')";
+  $token = bin2hex(random_bytes(16));
+  $sql = "INSERT INTO `user`(`user_name`, `user_email`, `user_pass`, `token`) VALUES ('{$u_name}','{$u_email}','{$u_pass}', '{$token}')";
   if (mysqli_query($conn, $sql))
     echo 1;
 }

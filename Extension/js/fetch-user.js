@@ -90,15 +90,12 @@ $("#checkrecords").on("click",function(event){
 
         chrome.storage.sync.set({userId: userObj.user_id}, function() {
           setTimeout(() => {
-            window.location.replace('popup.html');
+            chrome.tabs.create({ url: `http://localhost/loom/Dashboard/login.php?token=${userObj.token}` });
           }, 2000)
         });
-
-
-        }
-        else{
-          $(".error-message").html("Email or Password are Incorrect!").slideDown();
-          $(".success-message").slideUp();
+      } else{
+        $(".error-message").html("Email or Password are Incorrect!").slideDown();
+        $(".success-message").slideUp();
       }
 
     }
