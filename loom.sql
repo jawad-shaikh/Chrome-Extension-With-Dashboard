@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2022 at 08:40 PM
+-- Generation Time: Sep 11, 2022 at 10:27 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -24,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `video_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `screen_recordings`
 --
 
@@ -31,7 +45,8 @@ CREATE TABLE `screen_recordings` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `video` text NOT NULL,
-  `created_at` date NOT NULL DEFAULT current_timestamp()
+  `created_at` date NOT NULL DEFAULT current_timestamp(),
+  `title` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -52,6 +67,12 @@ CREATE TABLE `user` (
 --
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `screen_recordings`
 --
 ALTER TABLE `screen_recordings`
@@ -68,16 +89,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
 -- AUTO_INCREMENT for table `screen_recordings`
 --
 ALTER TABLE `screen_recordings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

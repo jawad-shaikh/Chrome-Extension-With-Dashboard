@@ -47,7 +47,6 @@ mysqli_close($conn);
                     <ion-icon name="play-outline"></ion-icon>
                   </a>
                   <div class="video-title">
-                    <!-- <span><?php echo $video['title'] ?></span> -->
                     <span><?php echo substr($video['title'], 0, 35) . "..."; ?></span>
                   </div>
                   <div class="date-area">

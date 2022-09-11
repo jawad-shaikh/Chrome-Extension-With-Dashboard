@@ -9,13 +9,23 @@ if (!isset($_SESSION['userId'])) {
 if (isset($_GET['vid'])) {
   $vid = mysqli_real_escape_string($conn, $_GET['vid']);
 
-  $sql = "SELECT * FROM screen_recordings sr inner join user u on u.user_id = sr.user_id  WHERE sr.video = '$vid'";
+  // fetching video
+  $fetchVid = "SELECT sr.id, sr.user_id, sr.created_at, sr.video, sr.title, u.user_name FROM screen_recordings sr INNER JOIN user u on u.user_id = sr.user_id  WHERE sr.video = '$vid'";
 
-  $result = mysqli_query($conn, $sql);
+  $fetchVidResult = mysqli_query($conn, $fetchVid);
 
-  $video = mysqli_fetch_assoc($result);
+  $video = mysqli_fetch_assoc($fetchVidResult);
 
-  mysqli_free_result($result);
+  if ($video) {
+    // fetching comments
+    $videoId = $video['id'];
+    $fetchComments = "SELECT c.comment, c.created_at, u.user_name FROM comments c LEFT JOIN user u ON c.user_id = u.user_id WHERE video_id = $videoId";
+
+    $fetchCommentsResuilt = mysqli_query($conn, $fetchComments);
+
+    $comments = mysqli_fetch_all($fetchCommentsResuilt);
+  }
+
   mysqli_close($conn);
 } else {
   $video = null;
@@ -48,15 +58,15 @@ if (isset($_GET['vid'])) {
 
             <div class="video-info-section">
               <h1 class="video-title">
-                <?= $video['title'] ?> - <?= $video['created_at'] ?>
+                <?= $video['title'] ?>
               </h1>
 
               <div class="uploader-info">
                 <img src="sources/profile.jpg" alt="" />
                 <span class="uploader-details">
                   <h4 class="uploader-name"><?= $video['user_name'] ?></h4>
-                  <span class="date"><?= $video['created_at'] ?> .
-                  </span>
+                  <span class="date"><?= $video['created_at'] ?></span>
+                </span>
               </div>
 
               <!--Comments Area-->
@@ -69,7 +79,16 @@ if (isset($_GET['vid'])) {
                 </span>
                 <form class="form-comment">
                   <input type="text" class="comment-input" id="commentInput" placeholder="Comment.." />
-                  <input type="hidden" class="userID" value="<?= $_SESSION['userId'] ?>">
+                  <input type="hidden" class="userName" value="<?php if (isset($_SESSION['userName'])) {
+                                                                  echo $_SESSION['userName'];
+                                                                } else {
+                                                                  echo "guest";
+                                                                } ?>">
+                  <input type="hidden" class="userID" value="<?php if (isset($_SESSION['userId'])) {
+                                                                echo $_SESSION['userId'];
+                                                              } else {
+                                                                echo "";
+                                                              } ?>">
                   <input type="hidden" class="videoID" value="<?= $video['id'] ?>" />
                   <button type="submit" class="comment-submit" id="publishComment">
                     <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -78,22 +97,37 @@ if (isset($_GET['vid'])) {
               </div>
 
               <div class="comment-area">
-                <div class="comment-x" >
-                  <span class="userprofile">R</span>
-                  <span class="comment-details">
-                    <h4 class="comment-username">
-                      <strong>A ChatterJE</strong>
-                    </h4>
-                    <span>at 0:02</span>
-                    <div class="comment-text">Hi, What's up!</div>
-                    <span class="date">5 days ago</span>
-                  </span>
-                </div>
+                <?php foreach ($comments as $comment) : ?>
+                  <div class="comment-x">
+                    <span class="userprofile">
+                      <strong>
+                        <?php if ($comment[2] == "") {
+                          echo "G";
+                        } else {
+                          echo strtoupper(substr($comment[2], 0, 1));
+                        }  ?>
+                      </strong>
+                    </span>
+                    <span class="comment-details">
+                      <h4 class="comment-username">
+                        <strong>
+                          <?php if ($comment[2] == "") {
+                            echo "guest";
+                          } else {
+                            echo $comment[2];
+                          } ?>
+                        </strong>
+                      </h4>
+                      <div class="comment-text"><?php echo $comment[0] ?></div>
+                      <span class="date"><?php echo $comment[1] ?></span>
+                    </span>
+                  </div>
+                <?php endforeach; ?>
               </div>
 
             <?php else : ?>
               <h4>No such video exists.</h4>
-            <?php endif ?>
+            <?php endif; ?>
 
             </div>
         </div>

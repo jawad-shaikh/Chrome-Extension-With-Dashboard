@@ -1,6 +1,7 @@
 const commentInteractionButton = document.querySelector(".comment-button-box");
 const commentForm = document.querySelector(".form-comment");
 const commentInput = document.querySelector(".comment-input");
+const userName = document.querySelector(".userName");
 const commentArea = document.querySelector(".comment-area");
 const commentBtn = document.querySelector(".comment-submit");
 const sideBar = document.querySelector("nav.sidebar");
@@ -43,19 +44,12 @@ interactionLinks.forEach((link) => {
 
 if (commentBtn !== null) {
   commentBtn.addEventListener("click", (event) => {
-    const year = new Date().getFullYear();
-    const day = new Date().getDay();
-    const month = new Date().getMonth() + 1;
-    const username = "Username";
-    const firstLetter = username.charAt(0);
-    const oneDay = 24 * 60 * 60 * 1000;
-    const firstDate = new Date(year, month, day);
-    const secondDate = new Date(year, month, day);
-    const time = new Date().toLocaleTimeString();
-    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
     const userID = document.querySelector('.userID').value;
     const comment = commentInput.value;
     const videoID = document.querySelector('.videoID').value;
+
+    const username = userName.value;
+    const firstLetter = username.charAt(0);
 
     event.preventDefault();
     if (commentInput.value !== "") {
@@ -71,16 +65,15 @@ if (commentBtn !== null) {
         success: (response) => {
           if(response == 'Success'){
             commentArea.insertAdjacentHTML(
-              "afterbegin",
+              "afterend",
               `<div class="comment-x" >
                 <span class="userprofile">${firstLetter}</span>
                 <span class="comment-details">
                     <h4 class="comment-username"><strong>${username}</strong></h4>
-                    <span>at ${time}</span>
                     <div class="comment-text">
                         ${comment}
                     </div>
-                    <span class="date">${diffDays} Days Ago</span>
+                    <span class="date">${Date()}</span>
                 </span>
             </div>`
             );

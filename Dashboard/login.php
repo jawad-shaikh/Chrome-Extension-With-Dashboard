@@ -11,6 +11,7 @@ if (isset($_POST['submit'])) {
     $data = mysqli_fetch_assoc($result);
     session_start();
     $_SESSION['userId'] = $data["user_id"];
+    $_SESSION['userName'] = $data["user_name"];
     header("Location: index.php");
   } else {
     $error = "Email or Password are Wrong.";
