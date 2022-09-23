@@ -14,6 +14,10 @@ if (mysqli_num_rows($res) > 0) {
 } else {
   $token = bin2hex(random_bytes(16));
   $sql = "INSERT INTO `user`(`user_name`, `user_email`, `user_pass`, `token`) VALUES ('{$u_name}','{$u_email}','{$u_pass}', '{$token}')";
-  if (mysqli_query($conn, $sql))
-    echo 1;
+  if (mysqli_query($conn, $sql)) {
+    $user_id = mysqli_insert_id($conn);
+    $arr = ['user_id' => $user_id, 'token' => $token];
+    $JSON = json_encode($arr);
+    echo $JSON;
+  }
 }

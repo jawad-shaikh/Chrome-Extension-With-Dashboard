@@ -16,6 +16,10 @@
           <a href="index.php">Home</a>
         </li>
         <li class="navlist">
+          <ion-icon name="home-outline"></ion-icon>
+          <a href="pricing.php">Pricing</a>
+        </li>
+        <li class="navlist">
           <ion-icon name="person-outline"></ion-icon><a href="#">Personal</a>
         </li>
         <li class="navlist">

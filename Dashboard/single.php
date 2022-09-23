@@ -62,7 +62,13 @@ if (isset($_GET['vid'])) {
               </h1>
 
               <div class="uploader-info">
-                <img src="sources/profile.jpg" alt="" />
+                <span class="userprofile" style="padding: 22px;">
+                  <strong style="font-size: 25px;">
+                    <?php
+                    echo strtoupper(substr($video['user_name'], 0, 1))
+                    ?>
+                  </strong>
+                </span>
                 <span class="uploader-details">
                   <h4 class="uploader-name"><?= $video['user_name'] ?></h4>
                   <span class="date"><?= $video['created_at'] ?></span>

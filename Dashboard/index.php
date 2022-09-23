@@ -34,28 +34,34 @@ mysqli_close($conn);
               <h1>My Videos</h1>
             </div>
             <div class="two-col-videos">
-              <?php
-              foreach ($videos as $video) :
-              ?>
+              <?php if (count($videos) == 0) { ?>
+                <h3>No videos to show...</h3>
+                <?php } else {
+                foreach ($videos as $video) {
+                ?>
 
-                <div class="col-first">
-                  <video>
-                    <source src="<?php echo "../api/files/" . $video['video'] ?>" type="video/mp4" size="1080" />
-                    <a href="<?php echo "../api/files/" . $video['video'] ?>" download>Download</a>
-                  </video>
-                  <a href="single.php?vid=<?php echo $video['video'] ?>" class="video-goto">
-                    <ion-icon name="play-outline"></ion-icon>
-                  </a>
-                  <div class="video-title">
-                    <span><?php echo substr($video['title'], 0, 35) . "..."; ?></span>
+                  <div class="col-first">
+                    <video>
+                      <source src="<?php echo "../api/files/" . $video['video'] ?>" type="video/mp4" size="1080" />
+                      <a href="<?php echo "../api/files/" . $video['video'] ?>" download>Download</a>
+                    </video>
+                    <a href="single.php?vid=<?php echo $video['video'] ?>" class="video-goto">
+                      <ion-icon name="play-outline"></ion-icon>
+                    </a>
+                    <a href="deleteVid.php?vid=<?php echo $video['video'] ?>" style="background-color: red">
+                      <ion-icon name="play-outline"></ion-icon>
+                    </a>
+                    <div class="video-title">
+                      <span><?php echo substr($video['title'], 0, 35) . "..."; ?></span>
+                    </div>
+                    <div class="date-area">
+                      <span><?php echo $video['created_at'] ?></span>
+                    </div>
                   </div>
-                  <div class="date-area">
-                    <span><?php echo $video['created_at'] ?></span>
-                  </div>
-                </div>
 
               <?php
-              endforeach;
+                }
+              }
               ?>
 
             </div>
