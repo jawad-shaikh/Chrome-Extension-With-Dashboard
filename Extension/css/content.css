@@ -196,6 +196,7 @@
     transition-property: background-color, transform, opacity;
     box-sizing: border-box;
 }
+
 #ScreenRecorder-screen-recorder-extension #toolbar-record .tool:hover, #ScreenRecorder-screen-recorder-extension #toolbar-record-pen .tool:hover, #ScreenRecorder-screen-recorder-extension #hide-camera:hover, #ScreenRecorder-screen-recorder-extension #toolbar-record-cursor .tool:hover{
     cursor: pointer!important;
     background-color: #F2F3F3;

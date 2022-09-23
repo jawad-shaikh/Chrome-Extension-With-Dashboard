@@ -33,6 +33,9 @@
       <div class="row">
         <div class="col-lg-12 p-0">
           <div class="header_iner d-flex justify-content-between align-items-center anim">
+            <?php if (!isset($userNotLoggedIn)) { ?>
+              <h1 class="media-manual">Hello, <span class="name-pill"><?php echo $_SESSION['userName'] ?></span></h1>
+            <?php } ?>
             <div class="sidebar_icon d-lg-none">
               <ion-icon name="menu-outline"></ion-icon>
             </div>
@@ -51,26 +54,27 @@
             </div>
             <div class="header_right d-flex justify-content-between align-items-center">
               <div class="header_notification_warp d-flex align-items-center">
-                <!--Views Count-->
-                <!-- <li class="anim">
-                    <span class="views onmediatab">
-                      <ion-icon name="eye-outline"></ion-icon>3 Views
-                    </span>
-                  </li> -->
-                  <?php
-                    if(basename($_SERVER['PHP_SELF']) == 'single.php') {                    
-                    ?>
-                     <li class="anim">
-                        <a class="nav-link-notify onmediatab downloadlink" href="#">
-                          <ion-icon name="download-outline"></ion-icon>
-                        </a>
-                      </li>
-                      <li class="anim">
-                        <a class="nav-link-notify onmediatab copylink" href="#">
-                          <ion-icon name="link-outline"></ion-icon>
-                        </a>
-                      </li>
-                    <?php } ?>
+                <?php
+                if (basename($_SERVER['PHP_SELF']) == 'single.php') {
+                ?>
+                  <li class="anim">
+                    <a class="nav-link-notify onmediatab downloadlink" href="#">
+                      <ion-icon name="download-outline"></ion-icon>
+                    </a>
+                  </li>
+                  <li class="anim">
+                    <a class="nav-link-notify onmediatab copylink" href="#">
+                      <ion-icon name="link-outline"></ion-icon>
+                    </a>
+                  </li>
+                <?php } ?>
+                <?php if (isset($userNotLoggedIn)) : ?>
+                  <li class="anim">
+                    <a class="btn btn-primary" href="signup.php">
+                      sign up for free
+                    </a>
+                  </li>
+                <?php endif; ?>
               </div>
             </div>
           </div>

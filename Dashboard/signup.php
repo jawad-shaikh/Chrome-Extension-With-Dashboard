@@ -1,5 +1,5 @@
 <?php
-include('config/db_connect.php');
+include('../config/db_connect.php');
 
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];

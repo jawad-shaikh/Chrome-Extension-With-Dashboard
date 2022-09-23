@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <!--Style.css-->
     <link rel="stylesheet" href="../css/login.css" />
-</head>
-<body>
-
-<div class="login-splash">
-  <img src="../assets/extension-icons/logo-128.png" alt="">
-</div>
-
-<!--Account Wrapper-->
-    <div class="title-wrapper">
-    <h1 class="sign-title">Login to Loom!</h1>
+  </head>
+  <body>
+    <div class="login-splash">
+      <img src="../assets/extension-icons/logo-128.png" alt="" />
     </div>
-    <div class="error-message" style="text-align: center; margin: auto; color: rgb(255 4 4);"></div>
-    <div class="success-message" style="text-align: center; margin: auto; color: green;"></div>
-        <div class="login-page">
-    <div class="form">
-      <form class="register-form" style="display: none;">
-                <input type="text" placeholder="Your Name" id="username">
-                <input type="email" placeholder="Email Address" id="useremail" >  
-                <input type="password" placeholder="Create a password" id="userpass" >
-                <button class="accountBtn" id="savedata">Create</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
-              </form>
-              <form class="login-form" >
-                <input type="email" placeholder="Email Address" id="loginemail" >
-                <input type="password" placeholder="Your Password" id="loginpass" >
-                <button class="loginBtn" id="checkrecords">login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
-              </form>
-            </div>
-          </div>
-<!--/Account Wrapper-->
 
+    <!--Account Wrapper-->
+    <div class="title-wrapper">
+      <h1 class="sign-title">Login to Loom!</h1>
+    </div>
+    <div
+      class="error-message"
+      style="text-align: center; margin: auto; color: rgb(255 4 4)"
+    ></div>
+    <div
+      class="success-message"
+      style="text-align: center; margin: auto; color: green"
+    ></div>
+    <div class="login-page">
+      <div class="form">
+        <form class="register-form" style="display: none">
+          <input type="text" placeholder="Your Name" id="username" />
+          <input type="email" placeholder="Email Address" id="useremail" />
+          <input
+            type="password"
+            placeholder="Create a password"
+            id="userpass"
+          />
+          <button class="accountBtn" id="savedata">Create</button>
+          <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+        <form class="login-form">
+          <input type="email" placeholder="Email Address" id="loginemail" />
+          <input type="password" placeholder="Your Password" id="loginpass" />
+          <button class="loginBtn" id="checkrecords">login</button>
+          <p class="message">
+            Not registered? <a href="#">Create an account</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <!--/Account Wrapper-->
 
-         <!--Jquery-->
-          <script src="../js/jquery.min.js"></script>
-         <!--Login-->
-         <script src="../js/login.js"></script>
-         <!--SignUp : fetch user data-->
-          <script src="../js/fetch-user.js"></script>
-        </body>
+    <!--Jquery-->
+    <script src="../js/jquery.min.js"></script>
+    <!--Login-->
+    <script src="../js/login.js"></script>
+    <!--SignUp : fetch user data-->
+    <script src="../js/fetch-user.js"></script>
+  </body>
 </html>
