@@ -34,7 +34,7 @@
         <div class="col-lg-12 p-0">
           <div class="header_iner d-flex justify-content-between align-items-center anim">
             <?php if (!isset($userNotLoggedIn)) { ?>
-              <h1>Hello, <?php echo $_SESSION['userName'] ?></h1>
+              <h1 class="media-manual">Hello, <span class="name-pill"><?php echo $_SESSION['userName'] ?></span></h1>
             <?php } ?>
             <div class="sidebar_icon d-lg-none">
               <ion-icon name="menu-outline"></ion-icon>

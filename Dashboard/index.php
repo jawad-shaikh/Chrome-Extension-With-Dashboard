@@ -48,8 +48,8 @@ mysqli_close($conn);
                     <a href="single.php?vid=<?php echo $video['video'] ?>" class="video-goto">
                       <ion-icon name="play-outline"></ion-icon>
                     </a>
-                    <a href="deleteVid.php?vid=<?php echo $video['video'] ?>" style="background-color: red">
-                      <ion-icon name="play-outline"></ion-icon>
+                    <a href="deleteVid.php?vid=<?php echo $video['video'] ?>" class="delete-bt">
+                      <ion-icon name="trash-outline"></ion-icon>
                     </a>
                     <div class="video-title">
                       <span><?php echo substr($video['title'], 0, 35) . "..."; ?></span>

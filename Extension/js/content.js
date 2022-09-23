@@ -108,7 +108,48 @@ $(document).ready(function(){
             $("#"+uniqueid).prepend(iframeinject);
 
             // Inject the toolbar
-            var toolbarinject = "<div id='color-pckr-thing'></div><div id='pen-slider' class='toolbar-inactive'><input type='range' min=1 max=50><img class='slider-track' src='"+chrome.extension.getURL('./assets/images/slider-track.svg')+"'></div><div id='eraser-slider' class='toolbar-inactive'><input type='range' min=1 max=50><img class='slider-track' src='"+chrome.extension.getURL('./assets/images/slider-track.svg')+"'></div><iframe id='toolbar-settings' class='toolbar-inactive' src='"+chrome.extension.getURL('./html/settings.html')+"'></iframe><div id='toolbar-record-cursor' class='toolbar-inactive noselect'><div id='click-tool' class='tool' title='Highlight clicks'><img src='"+chrome.extension.getURL('./assets/images/click.svg')+"'/></div><div id='focus-tool' class='tool' title='Highlight cursor'><img src='"+chrome.extension.getURL('./assets/images/focus.svg')+"'/></div><div id='hide-cursor-tool' class='tool' title='Hide cursor when inactive'><img src='"+chrome.extension.getURL('./assets/images/hide-cursor.svg')+"'/></div></div>   <div id='toolbar-record-pen' class='toolbar-inactive noselect'><div id='pen-tool' class='tool' title='Pen tool'><img src='"+chrome.extension.getURL('./assets/images/pen.svg')+"' class=/></div><div id='eraser' class='tool' title='Eraser tool'><img src='"+chrome.extension.getURL('./assets/images/eraser.svg')+"'/></div><div id='color-pckr' class='tool' title='Change the annotation color'><div id='color-icon'></div></div><div id='text' class='tool' title='Text tool'><img src='"+chrome.extension.getURL('./assets/images/text.svg')+"'/></div><div id='arrow' class='tool' title='Arrow tool'><img src='"+chrome.extension.getURL('./assets/images/arrow.svg')+"'/></div><div id='clear' class='tool' title='Delete all annotations'><img src='"+chrome.extension.getURL('./assets/images/clear.svg')+"'/></div></div>   <div id='toolbar-record' class='toolbar-inactive noselect'><div id='pause' class='tool' title='Pause/resume recording'><img src='"+chrome.extension.getURL('./assets/images/pausewhite.svg')+"'/></div><div id='cursor' class='tool' title='Cursor settings'><img src='"+chrome.extension.getURL('./assets/images/cursor.svg')+"'/></div><div id='pen' class='tool' title='Annotation tools'><img src='"+chrome.extension.getURL('./assets/images/pen.svg')+"'/></div><div id='camera' title='Enable camera' class='tool'><img src='"+chrome.extension.getURL('./assets/images/camera.svg')+"'/></div><div id='mic' class='tool tool-active' title='Enable/disable microphone'><img src='"+chrome.extension.getURL('./assets/images/mic-off.svg')+"'/></div><div id='tab-audio' class='tool tool-active' title='Enable/disable browser audio'><img src='"+chrome.extension.getURL('./assets/images/tab-audio-off.svg')+"'/></div><div id='settings' class='tool' title='Recording settings'><img src='"+chrome.extension.getURL('./assets/images/settings.svg')+"'/></div></div>";
+            var toolbarinject =
+            `<div id="color-pckr-thing"></div><div id="pen-slider" class="toolbar-inactive"><input type="range" min=1 max=50><img class="slider-track" src= 
+            ${chrome.extension.getURL("./assets/images/slider-track.svg")}>
+            </div><div id="eraser-slider" class="toolbar-inactive"><input type="range" min=1 max=50><img class="slider-track" src="
+            ${chrome.extension.getURL("./assets/images/slider-track.svg")}
+            "></div><iframe id="toolbar-settings" class="toolbar-inactive" src="
+            ${chrome.extension.getURL("./html/settings.html")} 
+            "></iframe><div id="toolbar-record-cursor" class="toolbar-inactive noselect"><div id="click-tool" class="tool" title="Highlight clicks"><img src="
+            ${chrome.extension.getURL("./assets/images/click.svg")} 
+            "/></div><div id="focus-tool" class="tool" title="Highlight cursor"><img src="
+            ${chrome.extension.getURL("./assets/images/focus.svg")} 
+            "/></div><div id="hide-cursor-tool" class="tool" title="Hide cursor when inactive"><img src="
+            ${chrome.extension.getURL("./assets/images/hide-cursor.svg")} 
+            "/></div></div>   <div id="toolbar-record-pen" class="toolbar-inactive noselect"><div id="pen-tool" class="tool" title="Pen tool"><img src="
+            ${chrome.extension.getURL("./assets/images/pen.svg")} 
+            " class=/></div><div id="eraser" class="tool" title="Eraser tool"><img src=" 
+            ${chrome.extension.getURL("./assets/images/eraser.svg")}
+            "/></div><div id="color-pckr" class="tool" title="Change the annotation color"><div id="color-icon"></div></div><div id="text" class="tool" title="Text tool"><img src="
+            ${chrome.extension.getURL("./assets/images/text.svg")} 
+            "/></div><div id="arrow" class="tool" title="Arrow tool"><img src="
+            ${chrome.extension.getURL("./assets/images/arrow.svg")} 
+            "/></div><div id="clear" class="tool" title="Delete all annotations"><img src="
+            ${chrome.extension.getURL("./assets/images/clear.svg")} 
+            "/></div></div>   <div id="toolbar-record" class="toolbar-inactive noselect"><div id="pause" class="tool" title="Pause/resume recording"><img src="
+            ${chrome.extension.getURL("./assets/images/pausewhite.svg")} 
+            "/></div><div id="doneRecording" class="tool finish"  title="Finish Recording"><img src=" 
+            ${chrome.extension.getURL("./assets/images/complete.svg")} 
+            "/></div><div id="CancelRecording" class="tool" title="Cancel Recording"><img src=" 
+            ${chrome.extension.getURL("./assets/images/cancel.svg")} 
+            "/></div><div id="cursor" class="tool cancel" title="Cursor settings"><img src=" 
+            ${chrome.extension.getURL("./assets/images/cursor.svg")} 
+            "/></div><div id="pen" class="tool" title="Annotation tools"><img src=" 
+            ${chrome.extension.getURL("./assets/images/pen.svg")} 
+            "/></div><div id="camera" title="Enable camera" class="tool"><img src=" 
+            ${chrome.extension.getURL("./assets/images/camera.svg")} 
+            "/></div><div id="mic" class="tool tool-active" title="Enable/disable microphone"><img src=" 
+            ${chrome.extension.getURL("./assets/images/mic-off.svg")} 
+            "/></div><div id="tab-audio" class="tool tool-active" title="Enable/disable browser audio"><img src=" 
+            ${chrome.extension.getURL("./assets/images/tab-audio-off.svg")} 
+            "/></div><div id="settings" class="tool" title="Recording settings"><img src=" 
+            ${chrome.extension.getURL("./assets/images/settings.svg")} 
+            "/></div></div>`;
             $("#"+uniqueid).prepend(toolbarinject);
             
             getDefaults();
@@ -439,62 +480,7 @@ $(document).ready(function(){
     // Pause the recording
     function pauseRecording() {
         recording = false;
-        
-        // Hide opened toolbars
-        hideTools();
-        moretools = false;
-        $("#"+uniqueid+" #toolbar-record-pen").addClass("toolbar-inactive");
-        $("#"+uniqueid+" #toolbar-record-cursor").addClass("toolbar-inactive");
-        $("#"+uniqueid+" #toolbar-settings").addClass("toolbar-inactive");
-        $("#"+uniqueid+" #toolbar-record").removeClass("toolbar-inactive");
-        $("#"+uniqueid+" .pen-options").removeClass("pen-options");
-        $("#"+uniqueid+" #toolbar-record #settings").removeClass("pen-options");
-        
-        // Replace icons & tooltips
         $("#"+uniqueid+" #pause img").attr("src", chrome.extension.getURL('./assets/images/play.svg'));
-        $("#"+uniqueid+" #cursor img").attr("src", chrome.extension.getURL('./assets/images/complete.svg'));
-        $("#"+uniqueid+" #cursor").attr("title", "Save recording");
-        $("#"+uniqueid+" #pen img").attr("src", chrome.extension.getURL('./assets/images/cancel.svg'));
-        $("#"+uniqueid+" #pen").attr("title", "Discard recording");
-        $("#"+uniqueid+" #toolbar-record #settings img").attr("src", chrome.extension.getURL('./assets/images/settings.svg'));
-        
-        
-        // Hide tools
-        $("#"+uniqueid+" #camera").addClass("hide-button");
-        $("#"+uniqueid+" #mic").addClass("hide-button");
-        $("#"+uniqueid+" #tab-audio").addClass("hide-button");
-        $("#"+uniqueid+" #settings").addClass("hide-button");
-        
-        // Disable all tools
-        $("#"+uniqueid+" #pen-slider").addClass("toolbar-inactive");
-        drawing = false;
-        arrowon = false;
-        texton = false;
-        clickon = false;
-        hideon = false;
-        focuson = false;
-        $("#"+uniqueid+" #canvas-freedraw").css("pointer-events", 'none');
-        $("#"+uniqueid+" #canvas-cont").css("pointer-events", 'none');
-        $("#"+uniqueid+" #canvas-focus").css("pointer-events", 'none');
-        $("#"+uniqueid+" #toolbar-record #pen").removeClass("tool-active");
-        $("#"+uniqueid+" #toolbar-record-pen #pen-tool").removeClass("tool-active");
-        $("#"+uniqueid+" #toolbar-record-pen #eraser").removeClass("tool-active");
-        $("#"+uniqueid+" #toolbar-record-pen #text").removeClass("tool-active");
-        $("#"+uniqueid+" #toolbar-record #arrow").removeClass("tool-active");
-        $("#"+uniqueid+" #toolbar-record-cursor #click-tool").removeClass("tool-active");
-        $("#"+uniqueid+" #toolbar-record-cursor #focus-tool").removeClass("tool-active");
-        $("#"+uniqueid+" #toolbar-record-cursor #hide-cursor-tool").removeClass("tool-active");
-        
-        // Replace images for all tools
-        $("#"+uniqueid+" #text img").attr("src", chrome.extension.getURL('./assets/images/text.svg'));
-        $("#"+uniqueid+" #pen-tool img").attr("src", chrome.extension.getURL('./assets/images/pen.svg'));
-        $("#"+uniqueid+" #eraser img").attr("src", chrome.extension.getURL('./assets/images/eraser.svg'));
-        $("#"+uniqueid+" #arrow img").attr("src", chrome.extension.getURL('./assets/images/arrow.svg'));
-        $("#"+uniqueid+" #click-tool img").attr("src", chrome.extension.getURL('./assets/images/click.svg'));
-        $("#"+uniqueid+" #focus-tool img").attr("src", chrome.extension.getURL('./assets/images/focus.svg'));
-        $("#"+uniqueid+" #hide-cursor-tool img").attr("src", chrome.extension.getURL('./assets/images/hide-cursor.svg'));
-        ctx_focus.clearRect(0, 0, canvas_focus.width, canvas_focus.height);
-        canvas.defaultCursor = "crosshair";
     }
     
     // Resume the recording
@@ -958,7 +944,6 @@ $(document).ready(function(){
     
     // Open pen toolbar, or discard the recording if it's paused
     $(document).on("click", "#"+uniqueid+" #toolbar-record #pen", function(){
-        if (recording) {
             if ($("#"+uniqueid+" #toolbar-record #pen").hasClass("pen-options")) {
                 moretools = false;
                 $("#"+uniqueid+" #toolbar-record #pen").removeClass("pen-options");
@@ -982,14 +967,11 @@ $(document).ready(function(){
                 $("#"+uniqueid+" #toolbar-record #pen img").attr("src", chrome.extension.getURL('./assets/images/close.svg'));
                 $("#"+uniqueid+" #toolbar-record-pen").removeClass("toolbar-inactive");
             }
-        } else {
-            cancelRecording();
-        }
+         
     });
     
     // Open cursor toolbar, or save the recording if it's paused
     $(document).on("click", "#"+uniqueid+" #toolbar-record #cursor", function(){
-        if (recording) {
             if ($("#"+uniqueid+" #toolbar-record #cursor").hasClass("pen-options")) {
                 moretools = false;
                 $("#"+uniqueid+" #toolbar-record #cursor").removeClass("pen-options");
@@ -1012,11 +994,16 @@ $(document).ready(function(){
                 $("#"+uniqueid+" #toolbar-record #cursor img").attr("src", chrome.extension.getURL('./assets/images/close.svg'));
                 $("#"+uniqueid+" #toolbar-record-cursor").removeClass("toolbar-inactive");
             }
-        } else {
-            saveRecording();
-        }
     });
     
+    $(document).on("click", "#doneRecording", function(){
+        saveRecording();
+    });
+    
+    $(document).on("click", "#CancelRecording", function(){
+        cancelRecording();
+    });
+
     // Enable/disable freedrawing
     $(document).on("click", "#"+uniqueid+" #pen-tool", function(){
        if ($("#"+uniqueid+" #pen-tool").hasClass("tool-active")) {

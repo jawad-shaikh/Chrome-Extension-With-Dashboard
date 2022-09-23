@@ -16,7 +16,7 @@
           <a href="index.php">Home</a>
         </li>
         <li class="navlist">
-          <ion-icon name="home-outline"></ion-icon>
+        <ion-icon name="card-outline"></ion-icon>
           <a href="pricing.php">Pricing</a>
         </li>
         <li class="navlist">

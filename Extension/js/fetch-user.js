@@ -21,7 +21,8 @@ function redirectloginpage() {
 
 // Ajax using Jquery to insert data into Database
 $(document).ready(function () {
-  $("#savedata").on("click", function () {
+  $("#savedata").on("click", function (e) {
+    e.preventDefault();
     var username = $("#username").val();
     var useremail = $("#useremail").val();
     var userpass = $("#userpass").val();
@@ -44,14 +45,13 @@ $(document).ready(function () {
               .html("account created Successfully.")
               .slideDown();
             $(".error-message").slideUp();
-
-            chrome.storage.sync.set({ userId: userObj.user_id }, function () {
-              setTimeout(() => {
+            setTimeout(() => {
+              chrome.storage.sync.set({ userId: userObj.user_id }, function () {
                 chrome.tabs.create({
                   url: `http://localhost/loom/Dashboard/login.php?token=${userObj.token}`,
                 });
-              }, 2000);
-            });
+              });
+            }, 2000);
           } else {
             if (sth == 0) {
               $(".error-message").html("Email ALready Exist.").slideDown();
