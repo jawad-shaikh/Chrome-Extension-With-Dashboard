@@ -539,4 +539,7 @@ $(document).ready(function () {
   $("#countdown-label").html(chrome.i18n.getMessage("countdown"));
   $("#hover-label").html(chrome.i18n.getMessage("only_on_hover"));
   $("#record").html(chrome.i18n.getMessage("loading"));
+
+  $("#tab-only").click();
+  $("#desktop").click();
 });
