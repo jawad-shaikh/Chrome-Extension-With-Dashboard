@@ -16,10 +16,10 @@
           <a href="index.php">Home</a>
         </li>
         <li class="navlist">
-        <ion-icon name="card-outline"></ion-icon>
+          <ion-icon name="card-outline"></ion-icon>
           <a href="pricing.php">Pricing</a>
         </li>
-        <li class="navlist">
+        <!-- <li class="navlist">
           <ion-icon name="person-outline"></ion-icon><a href="#">Personal</a>
         </li>
         <li class="navlist">
@@ -27,7 +27,7 @@
         </li>
         <li class="navlist">
           <ion-icon name="star-outline"></ion-icon><a href="#">Starred</a>
-        </li>
+        </li> -->
       </ul>
     </li>
     <li class="mm-active">

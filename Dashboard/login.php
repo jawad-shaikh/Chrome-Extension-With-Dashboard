@@ -1,6 +1,11 @@
 <?php
 include('../config/db_connect.php');
 
+session_start();
+if (isset($_SESSION['userId'])) {
+  header("Location: index.php");
+}
+
 if (isset($_POST['submit'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
