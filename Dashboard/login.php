@@ -99,9 +99,9 @@ if (isset($_GET['token'])) {
             Need an account?
             <a href="signup.php">Sign Up</a>
           </p>
-          <div class="text-center">
+          <!-- <div class="text-center">
             <a href="#" data-toggle="modal" data-target="#forgot_password" data-dismiss="modal" class="pass_forget_btn">Forget Password?</a>
-          </div>
+          </div> -->
         </form>
       </div>
     </div>
