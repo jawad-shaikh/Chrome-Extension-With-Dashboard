@@ -37,7 +37,7 @@ if (!isset($_SESSION['userId'])) {
           <!-- <a href="#">Order Now </a> -->
           <form action="stripe.php" method="POST" style="z-index: 9999999999;">
             <input type="hidden" name="packageName" value="basic">
-            <button type="submit">Checkout</button>
+            <button type="submit" class="button-stripe">Checkout</button>
           </form>
         </div>
       </div>
@@ -62,7 +62,7 @@ if (!isset($_SESSION['userId'])) {
           <!-- <a href="#">Order Now </a> -->
           <form action="stripe.php" method="POST" style="z-index: 9999999999;">
             <input type="hidden" name="packageName" value="standard">
-            <button type="submit">Checkout</button>
+            <button type="submit" class="button-stripe">Checkout</button>
           </form>
         </div>
       </div>
@@ -71,7 +71,7 @@ if (!isset($_SESSION['userId'])) {
         <div class="card text-center">
           <div class="title">
             <i class="fa fa-rocket" aria-hidden="true"></i>
-            <h2>Premium</h2>
+            <h2>Enterprise</h2>
           </div>
           <div class="price">
             <h4><sup>$</sup>100</h4>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['userId'])) {
           <!-- <a href="#">Order Now </a> -->
           <form action="stripe.php" method="POST" style="z-index: 9999999999;">
             <input type="hidden" name="packageName" value="premium">
-            <button type="submit">Checkout</button>
+            <button type="submit" class="button-stripe">Checkout</button>
           </form>
         </div>
       </div>

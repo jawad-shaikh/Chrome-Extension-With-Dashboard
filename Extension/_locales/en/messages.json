@@ -168,12 +168,12 @@
       "description": "Download button in video editor"
     },
     "save_drive": {
-      "message": "Save to Drive",
-      "description": "Save to Drive button in video editor"
+      "message": "Save to Panel",
+      "description": "Save to Panel button in video editor"
     },
     "saving": {
       "message": "Saving...",
-      "description": "Saving to Drive button in video editor"
+      "description": "Saving to Panel button in video editor"
     },
     "show_hide": {
       "message": "Show/hide options",

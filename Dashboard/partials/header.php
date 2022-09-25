@@ -10,15 +10,17 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://unpkg.com/plyr@3/dist/plyr.css" />
   <link rel="stylesheet" href="css/index.css">
+  <link rel="shortcut icon" href="loom-images/favicon.ico" type="image/x-icon">
 </head>
 
 <body class="crm_body_bg">
   <!--PreLoader-->
   <div class="loader">
-    <span>L</span>
+    <span>R</span>
+    <span>E</span>
+    <span>C</span>
     <span>O</span>
-    <span>O</span>
-    <span>M</span>
+    <span>D</span>
   </div>
 
   <!--/Preloeader-->

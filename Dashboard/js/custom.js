@@ -6,6 +6,10 @@ const commentArea = document.querySelector(".comment-area");
 const commentBtn = document.querySelector(".comment-submit");
 const sideBar = document.querySelector("nav.sidebar");
 const sidebarClose = document.querySelector(".sidebar_close_icon");
+const year = new Date().getFullYear();
+const day = new Date().getDate();
+const month = new Date().getMonth() + 1;
+const FinalDate = `${year}-${month <= 10 ? "0" + month : month}-${day <= 10 ? "0" + day : day} ${new Date().toLocaleTimeString()}`;
 let repliedUsername;
 let repliedToMessage;
 
@@ -73,7 +77,7 @@ if (commentBtn !== null) {
                     <div class="comment-text">
                         ${comment}
                     </div>
-                    <span class="date">${Date()}</span>
+                    <span class="date">${FinalDate}</span>
                 </span>
             </div>`
             );

@@ -169,11 +169,11 @@
     },
     "save_drive": {
       "message": "Guardar en Drive",
-      "description": "Save to Drive button in video editor"
+      "description": "Save to Panel button in video editor"
     },
     "saving": {
       "message": "Guardando...",
-      "description": "Saving to Drive button in video editor"
+      "description": "Saving to Panel button in video editor"
     },
     "show_hide": {
       "message": "Mostrar/ocultar opciones",

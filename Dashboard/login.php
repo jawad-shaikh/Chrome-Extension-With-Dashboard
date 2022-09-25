@@ -50,26 +50,27 @@ if (isset($_GET['token'])) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Login</title>
-  <link rel="icon" href="img/favicon.png" type="image/png" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/login.css" />
+  <link rel="shortcut icon" href="loom-images/favicon.ico" type="image/x-icon">
 </head>
 
 <body class="crm_body_bg">
   <!--Loader-->
   <div class="loader">
-    <span>L</span>
+    <span>R</span>
+    <span>E</span>
+    <span>C</span>
     <span>O</span>
-    <span>O</span>
-    <span>M</span>
+    <span>D</span>
   </div>
 
   <!--Loader-->
 
   <!--Header-->
   <header class="header-lm">
-    <a href="index.html" class="anim"><img src="loom-images/loom-logo.png" alt="logo" style="mix-blend-mode: color-dodge" width="150px" /></a>
+    <a href="index.html" class="anim"><img src="loom-images/loom-logo.png" alt="logo" style="mix-blend-mode: color-dodge" width="100px" /></a>
   </header>
   <!--/Header-->
 
@@ -78,7 +79,7 @@ if (isset($_GET['token'])) {
     <div class="modal-content cs_modal">
       <div class="modal-header justify-content-center theme_bg_1">
         <h5 class="modal-title text_white" style="text-align: left">
-          Sign in to Loom
+          Sign in to Recod
         </h5>
       </div>
       <div class="modal-body">
