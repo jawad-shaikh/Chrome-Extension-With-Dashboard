@@ -1,7 +1,10 @@
 $(document).ready(function () {
+ 
   setTimeout(() => {
     saveAutomatically();
   }, 1500);
+
+
 
   var videoUrlWhichJustGotSaved;
   var blobs = recordedBlobs;
@@ -165,6 +168,9 @@ $(document).ready(function () {
 
   // save Automatically
   function saveAutomatically() {
+
+    const saveBtn = document.querySelector('.save-btn');
+    saveBtn.innerText = 'Save To Panel';
     downloaded = true;
 
     var title = $("#titleText").val();
@@ -322,26 +328,7 @@ $(document).ready(function () {
     $("#export").toggleClass("hidepanel");
   });
 
-  // Localization (strings in different languages)
-  $("#made-with").html(chrome.i18n.getMessage("made_with"));
-  $("#by-alyssa").html(chrome.i18n.getMessage("by_alyssa"));
-  $("#rate-label").html(chrome.i18n.getMessage("rate_extension"));
-  $("#show-hide").html(chrome.i18n.getMessage("show_hide"));
-  $("#edit-label").html(chrome.i18n.getMessage("edit_recording"));
-  $("h2").html(chrome.i18n.getMessage("edit_recording_desc"));
-  $("#format-select-label").html(chrome.i18n.getMessage("format"));
-  $("#webm-default").html(chrome.i18n.getMessage("webm"));
-  $("#trim-label").html(chrome.i18n.getMessage("trim_video"));
-  $(".start-label").html(chrome.i18n.getMessage("start"));
-  $(".end-label").html(chrome.i18n.getMessage("end"));
-  $("#apply-trim").html(chrome.i18n.getMessage("apply"));
-  $("#remove-label").html(chrome.i18n.getMessage("remove_part"));
-  $("#format-select-label").html(chrome.i18n.getMessage("format"));
-  $("#apply-remove").html(chrome.i18n.getMessage("apply"));
-  $("#reset").html(chrome.i18n.getMessage("reset"));
-  $("#download-label").html(chrome.i18n.getMessage("download"));
-  $("#share span").html(chrome.i18n.getMessage("save_drive"));
-  $("#apply-trim").html(chrome.i18n.getMessage("apply"));
+ 
 });
 
 const titleInput = document.querySelector(".title-input");

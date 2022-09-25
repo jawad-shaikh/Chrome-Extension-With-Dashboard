@@ -1,7 +1,10 @@
 <!-- sidebar part here -->
 <nav class="sidebar vertical-scroll ps-container ps-theme-default ps-active-y">
   <div class="logo d-flex justify-content-between anim">
-    <a href="index.php"><img src="loom-images/loom-logo.png" alt="" style="filter: hue-rotate(155deg) invert(1)" width="50px" /></a>
+    <a href="index.php" class="logo-tainer" >
+      <img src="loom-images/loom-logo.png" alt="logo" width="50px" />
+      Recod
+  </a>
     <div class="sidebar_close_icon d-lg-none">
       <ion-icon name="close-outline"></ion-icon>
     </div>
@@ -16,10 +19,10 @@
           <a href="index.php">Home</a>
         </li>
         <li class="navlist">
-        <ion-icon name="card-outline"></ion-icon>
+          <ion-icon name="card-outline"></ion-icon>
           <a href="pricing.php">Pricing</a>
         </li>
-        <li class="navlist">
+        <!-- <li class="navlist">
           <ion-icon name="person-outline"></ion-icon><a href="#">Personal</a>
         </li>
         <li class="navlist">
@@ -27,7 +30,7 @@
         </li>
         <li class="navlist">
           <ion-icon name="star-outline"></ion-icon><a href="#">Starred</a>
-        </li>
+        </li> -->
       </ul>
     </li>
     <li class="mm-active">

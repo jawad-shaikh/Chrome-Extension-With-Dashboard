@@ -12,7 +12,7 @@ var recording = false;
 var tabid = 0;
 var maintabs = [];
 var camtabs = [];
-var recording_type = "tab-only";
+var recording_type = "desktop";
 var pushtotalk;
 var newwindow = null;
 var micable = true;

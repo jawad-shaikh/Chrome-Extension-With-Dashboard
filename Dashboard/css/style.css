@@ -4194,8 +4194,10 @@ table.dataTable {
   background: #fff;
   border-radius: 7px;
   padding-bottom: 20px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
-
 /* line 43, G:/admin_project/6 admin/marketing/scss/_sidebar.scss */
 .sidebar .logo img {
   width: 150px;
@@ -12666,6 +12668,7 @@ span.userprofile {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  text-transform: uppercase;
 }
 
 .comment-x {
@@ -13121,6 +13124,7 @@ a.signBtn {
   padding: 40px 20px;
   box-shadow: 0 10px 15px rgba(0,0,0,.1);
   transition: .5s;
+  overflow: hidden;
 }
 
 .card::before{
@@ -13300,6 +13304,24 @@ h1.media-manual {
   text-decoration: none;
   color: #fff;
   margin-top: 10px;
+}
+.button-stripe {
+  border-radius: 15px;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 7px 30px;
+}
+.logo-tainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #111;
+  text-transform: uppercase;
 }
 @media (max-width: 991px){
   .media-manual{

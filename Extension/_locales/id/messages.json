@@ -169,11 +169,11 @@
     },
     "save_drive": {
       "message": "Simpan ke Google Drive",
-      "description": "Save to Drive button in video editor"
+      "description": "Save to Panel button in video editor"
     },
     "saving": {
       "message": "Menyimpan...",
-      "description": "Saving to Drive button in video editor"
+      "description": "Saving to Panel button in video editor"
     },
     "show_hide": {
       "message": "Perlihatkan/Sembunyikan options",

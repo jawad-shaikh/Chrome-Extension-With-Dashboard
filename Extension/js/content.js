@@ -135,24 +135,60 @@ $(document).ready(function(){
             ${chrome.extension.getURL("./assets/images/pausewhite.svg")} 
             "/></div><div id="doneRecording" class="tool finish"  title="Finish Recording"><img src=" 
             ${chrome.extension.getURL("./assets/images/complete.svg")} 
-            "/></div><div id="CancelRecording" class="tool" title="Cancel Recording"><img src=" 
+            "/></div>
+            
+            <div id="AllOptions" class="tool" title="Options">
+                <img src="${chrome.extension.getURL("./assets/images/arrow.svg")}" />
+            </div>
+            <div id="CancelRecording" class="tool hide-toools" title="Cancel Recording"><img src=" 
             ${chrome.extension.getURL("./assets/images/cancel.svg")} 
-            "/></div><div id="cursor" class="tool cancel" title="Cursor settings"><img src=" 
+            "/></div>
+            <div id="cursor" class="tool cancel hide-toools" title="Cursor settings"><img src=" 
             ${chrome.extension.getURL("./assets/images/cursor.svg")} 
-            "/></div><div id="pen" class="tool" title="Annotation tools"><img src=" 
+            "/></div><div id="pen" class="tool hide-toools" title="Annotation tools"><img src=" 
             ${chrome.extension.getURL("./assets/images/pen.svg")} 
-            "/></div><div id="camera" title="Enable camera" class="tool"><img src=" 
+            "/></div><div id="camera" title="Enable camera" class="tool hide-toools"><img src=" 
             ${chrome.extension.getURL("./assets/images/camera.svg")} 
-            "/></div><div id="mic" class="tool tool-active" title="Enable/disable microphone"><img src=" 
+            "/></div><div id="mic" class="tool tool-active hide-toools" title="Enable/disable microphone"><img src=" 
             ${chrome.extension.getURL("./assets/images/mic-off.svg")} 
-            "/></div><div id="tab-audio" class="tool tool-active" title="Enable/disable browser audio"><img src=" 
+            "/></div><div id="tab-audio" class="tool tool-active hide-toools" title="Enable/disable browser audio"><img src=" 
             ${chrome.extension.getURL("./assets/images/tab-audio-off.svg")} 
-            "/></div><div id="settings" class="tool" title="Recording settings"><img src=" 
+            "/></div><div id="settings" class="tool hide-toools" title="Recording settings"><img src=" 
             ${chrome.extension.getURL("./assets/images/settings.svg")} 
             "/></div></div>`;
             $("#"+uniqueid).prepend(toolbarinject);
             
             getDefaults();
+
+          
+            (()=> {
+                document.querySelectorAll('.hide-toools').forEach(element => {
+                    element.style.visibility = 'hidden';
+                })
+            })();
+
+
+            const allOptions = document.querySelector('#AllOptions');
+
+            allOptions.addEventListener('click', () => {
+                const hideToools = document.querySelectorAll('.hide-toools');
+                hideToools.forEach(tools => {
+                    if(tools.style.visibility == 'hidden'){
+                        AllOptions.firstElementChild.style.transform = 'rotate(180deg)';
+                        tools.style.transition = '200ms linear';
+                        tools.style.opacity = '1';
+                        tools.style.visibility = 'visible';
+                    }
+                    else{
+                        AllOptions.firstElementChild.style.transform = 'rotate(0deg)';
+                        tools.style.transition = '200ms linear';
+                        tools.style.opacity = '0';
+                        tools.style.visibility = 'hidden';
+                    }
+                });
+            })
+
+
             
             // Initialize color picker
             pickr = Pickr.create({

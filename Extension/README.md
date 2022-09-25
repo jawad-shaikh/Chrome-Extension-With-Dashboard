@@ -7,9 +7,7 @@ The most powerful screen recorder & annotation tool for Chrome 🎥
 
 ScreenRecorder is a feature-packed screen and camera recorder for Chrome. Annotate your screen to give feedback, emphasize your clicks, edit your recording, and much more.
 
-> You can support this project (and many others) through [GitHub Sponsors](https://github.com/sponsors/alyssaxuu)! ❤️
-
-Made by [AETSM Soft](https://alyssax.com)
+Made by [AETSM Soft](https://aetsmsoft.com)
 
 <a href="https://www.producthunt.com/posts/ScreenRecorder?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-ScreenRecorder" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=275308&theme=light&period=daily" alt="ScreenRecorder - The most powerful screen recorder for Chrome | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 <a href="https://news.ycombinator.com/item?id=25150804" target="_blank"><img height=53 src="https://hackerbadge.now.sh/api?id=25150804&type=orange" alt="Featured on HackerNews"></a>
@@ -68,5 +66,3 @@ You can run ScreenRecorder locally without having to install it from the Chrome 
 - [StreamSaver.js](https://github.com/jimmywarting/StreamSaver.js) - for saving the video asynchronously while recording
 - [fix-webm-duration](https://github.com/yusitnikov/fix-webm-duration) - for making the downloaded videos seekable
 
-#
- Feel free to reach out to me through email at hi@alyssax.com or [on Twitter](https://twitter.com/alyssaxuu) if you have any questions or feedback! Hope you find this useful 💜

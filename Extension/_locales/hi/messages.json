@@ -169,11 +169,11 @@
     },
     "save_drive": {
       "message": "ड्राइव में सेव करें",
-      "description": "Save to Drive button in video editor"
+      "description": "Save to Panel button in video editor"
     },
     "saving": {
       "message": "सेविंग...",
-      "description": "Saving to Drive button in video editor"
+      "description": "Saving to Panel button in video editor"
     },
     "show_hide": {
       "message": "विकल्प दिखाएं/छुपाएं",
