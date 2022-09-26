@@ -31,7 +31,7 @@ $(document).ready(function () {
       $(".success-message").slideUp();
     } else {
       $.ajax({
-        url: "http://localhost/Loom/api/register.php",
+        url: "https://app.recod.io/api/register.php",
         type: "POST",
         data: {
           user_name: username,
@@ -48,7 +48,7 @@ $(document).ready(function () {
             setTimeout(() => {
               chrome.storage.sync.set({ userId: userObj.user_id }, function () {
                 chrome.tabs.create({
-                  url: `http://localhost/loom/Dashboard/login.php?token=${userObj.token}`,
+                  url: `https://app.recod.io/Dashboard/login.php?token=${userObj.token}`,
                 });
               });
             }, 2000);
@@ -76,7 +76,7 @@ $(document).ready(function () {
       $(".success-message").slideUp();
     } else {
       $.ajax({
-        url: "http://localhost/Loom/api/login.php",
+        url: "https://app.recod.io/api/login.php",
         type: "POST",
         data: { login_email: loginemail, login_pass: loginpass },
         success: function (sth) {
@@ -88,7 +88,7 @@ $(document).ready(function () {
             chrome.storage.sync.set({ userId: userObj.user_id }, function () {
               setTimeout(() => {
                 chrome.tabs.create({
-                  url: `http://localhost/loom/Dashboard/login.php?token=${userObj.token}`,
+                  url: `https://app.recod.io/Dashboard/login.php?token=${userObj.token}`,
                 });
               }, 2000);
             });

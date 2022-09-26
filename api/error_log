@@ -1,0 +1,12 @@
+[25-Sep-2022 13:56:10 America/New_York] PHP Notice:  Undefined index: user_name in /home/aetsqfgb/app.recod.io/api/register.php on line 5
+[25-Sep-2022 13:56:10 America/New_York] PHP Notice:  Undefined index: user_email in /home/aetsqfgb/app.recod.io/api/register.php on line 6
+[25-Sep-2022 13:56:10 America/New_York] PHP Notice:  Undefined index: user_pass in /home/aetsqfgb/app.recod.io/api/register.php on line 7
+[25-Sep-2022 13:56:12 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[25-Sep-2022 13:56:12 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[25-Sep-2022 14:22:07 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/comment.php on line 7
+[25-Sep-2022 14:22:07 America/New_York] PHP Notice:  Undefined index: videoId in /home/aetsqfgb/app.recod.io/api/comment.php on line 8
+[25-Sep-2022 14:22:07 America/New_York] PHP Notice:  Undefined index: comment in /home/aetsqfgb/app.recod.io/api/comment.php on line 9
