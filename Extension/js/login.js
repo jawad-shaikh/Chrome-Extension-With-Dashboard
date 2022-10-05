@@ -21,7 +21,7 @@ $('.message').click(function(){
         titleName.style.opacity = '0';
         setTimeout(() => {
             titleName.style.opacity = '1';
-            titleName.innerText = 'Login to Loom!';
+            titleName.innerText = 'Login to Recod!';
         }, 300)
     }
 

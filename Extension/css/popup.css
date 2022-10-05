@@ -10,7 +10,11 @@ html {
     width: 100%;
     height: 50px;
 }
-
+div#logo {
+    display: flex;
+    justify-content: flex0s;
+    align-items: center;
+}
 #logo {
     font-family: Roboto;
     font-weight: bold;

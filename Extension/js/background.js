@@ -91,7 +91,7 @@ function saveRecording(url, blobs) {
 
 // Stop recording
 function endRecording(stream, writer, recordedBlobs) {
-  // Get video duration
+  //Get video duration
   chrome.storage.sync.get(["start", "total"], function (result) {
     chrome.storage.sync.set({
       total: Date.now() - result.start + result.total,
@@ -138,7 +138,7 @@ function endRecording(stream, writer, recordedBlobs) {
 }
 
 // Start recording the entire desktop / specific application
-function getDesktop() {
+function getDesktop(cb) {
   var constraints = {
     audio: true,
     video: true,
@@ -195,6 +195,7 @@ function getDesktop() {
       cancel = false;
       mediaRecorder.stop();
     };
+    if (cb != null) cb(true);
   });
 }
 
@@ -270,7 +271,7 @@ function getTab() {
 }
 
 // Inject content scripts to start recording
-function startRecording() {
+function startRecording(cb = null) {
   chrome.storage.sync.set({
     start: Date.now(),
   });
@@ -279,11 +280,14 @@ function startRecording() {
     recording = true;
   }
   getDeviceId();
-  record();
+  if (cb == null) record();
+  else {
+    record(cb);
+  }
 }
 
 // Get microphone audio and start recording video
-function record() {
+function record(cb = null) {
   // Get window dimensions to record
   chrome.windows.getCurrent(function (window) {
     width = window.innerWidth;
@@ -312,8 +316,12 @@ function record() {
             micsource = audioCtx.createMediaStreamSource(mic);
 
             // Check recording type
-            if (recording_type == "desktop") {
-              getDesktop();
+            console.log("315", recording_type);
+            if (
+              recording_type == "desktop" ||
+              recording_type == "camera-only"
+            ) {
+              getDesktop(cb);
             } else if (recording_type == "tab-only") {
               getTab();
             }
@@ -322,8 +330,11 @@ function record() {
             micable = false;
 
             // Check recording type
-            if (recording_type == "desktop") {
-              getDesktop();
+            if (
+              recording_type == "desktop" ||
+              recording_type == "camera-only"
+            ) {
+              getDesktop(cb);
             } else if (recording_type == "tab-only") {
               getTab();
             }
@@ -762,7 +773,20 @@ chrome.commands.onCommand.addListener(function (command) {
 // Listen for messages from content / popup
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.type == "record") {
-    startRecording();
+    if (request.id == "Rohaanic") {
+      camerasize = "xlarge-size";
+      startRecording((val) => {
+        setTimeout(() => {
+          chrome.tabs.getSelected(null, function (tab) {
+            chrome.tabs.sendMessage(tab.id, {
+              type: "Rohaanic",
+            });
+          });
+        }, 1000);
+      });
+    } else {
+      startRecording();
+    }
   } else if (request.type == "pause") {
     pauseRecording();
     sendResponse({ success: true });
@@ -849,10 +873,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     camerapos.x = request.x;
     camerapos.y = request.y;
   } else if (request.type == "test") {
-    chrome.tabs.getSelected(null, function (tab) {
-      chrome.tabs.sendMessage(tab.id, {
-        type: "hello",
-      });
-    });
+    console.log(request);
+    //startRecording();
+
+    // chrome.tabs.getSelected(null, function (tab) {
+    //   chrome.tabs.sendMessage(tab.id, {
+    //     type: "hello",
+    //   });
+    // });
   }
 });

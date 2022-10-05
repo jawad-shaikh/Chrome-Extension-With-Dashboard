@@ -151,3 +151,6 @@ form.login-form {
     justify-content: center;
     align-items: center;
 }
+.login-splash img {
+    width: 200px;
+}

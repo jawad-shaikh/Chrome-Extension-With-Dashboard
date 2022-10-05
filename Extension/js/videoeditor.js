@@ -3,12 +3,66 @@ $(document).ready(function () {
     saveAutomatically();
   }, 1500);
 
+  $("#share").css("cursor", "not-allowed");
+
+  const closeBtn = document.querySelector(".closeBtn");
+
+  closeBtn.addEventListener("click", () => {
+    closeBtn.parentElement.parentElement.classList.add("hide");
+    showBosyMessage();
+  });
+
+  function showBosyMessage() {
+    const waitMess = document.querySelector(".wait-msg");
+    waitMess.classList.add("active");
+
+    setTimeout(() => {
+      waitMess.classList.remove("active");
+    }, 2000);
+  }
+
   var videoUrlWhichJustGotSaved;
   var blobs = recordedBlobs;
   var player;
   var trimslider = document.getElementById("trimslider");
   var removeslider = document.getElementById("removeslider");
   var setup = true;
+  let hook = true;
+
+  function getLink(url) {
+    const copyLink = document.querySelector(".copyTo");
+    const copyMess = document.querySelector(".copy-mess");
+
+    if (copyLink.hasAttribute("disabled")) {
+      copyLink.removeAttribute("disabled");
+      copyLink.removeAttribute("aria-disabled");
+    }
+
+    copyLink.style.cursor = "pointer";
+
+    copyLink.addEventListener("click", (e) => {
+      const finalUrl = `https://app.recod.io/Dashboard/single.php?vid=${url}`;
+      e.preventDefault();
+      copyMess.classList.add("active");
+      navigator.clipboard.writeText(finalUrl);
+      setTimeout(() => {
+        copyMess.classList.remove("active");
+      }, 2000);
+    });
+  }
+
+  function goodbye(e) {
+    if (!e) e = window.event;
+    //e.cancelBubble is supported by IE - this will kill the bubbling process.
+    e.cancelBubble = true;
+    e.returnValue = "You sure you want to leave? Video is not yet Uploaded!"; //This is displayed on the dialog
+
+    //e.stopPropagation works in Firefox.
+    if (e.stopPropagation) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
 
   // Show recorded video
   if (url == "" || url == null) {
@@ -163,10 +217,15 @@ $(document).ready(function () {
     }
   }
 
+  function removeLoading() {
+    const loading = document.querySelector(".loading");
+    loading.classList.add("hide");
+  }
+
   // save Automatically
   function saveAutomatically() {
     downloaded = true;
-
+    window.onbeforeunload = goodbye;
     var title = $("#titleText").val();
     var metadata = {
       name: "video.mp4",
@@ -198,9 +257,30 @@ $(document).ready(function () {
           let result = data.indexOf("=");
           videoUrlWhichJustGotSaved = data.substr(result + 1);
           console.log(videoUrlWhichJustGotSaved);
+          getLink(videoUrlWhichJustGotSaved);
+          removeLoading();
+          finishUploadMessage();
+          saveBtnListener();
         }
       });
     });
+  }
+
+  function saveBtnListener() {
+    $("#share").on("click", function () {
+      saveDrive();
+    });
+    $("#share").css("cursor", "pointer");
+  }
+
+
+  function finishUploadMessage(){
+    const finishMsg = document.querySelector('.finish-msg');
+    finishMsg.classList.add('active');
+
+    setTimeout(() => {
+      finishMsg.classList.remove('active');  
+    }, 2000)
   }
 
   // Save on Drive
@@ -307,9 +387,6 @@ $(document).ready(function () {
   });
 
   // Save on Drive
-  $("#share").on("click", function () {
-    saveDrive();
-  });
 
   // Revert changes made to the video
   $("#reset").on("click", function () {

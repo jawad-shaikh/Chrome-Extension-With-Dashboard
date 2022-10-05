@@ -169,7 +169,7 @@
     },
     "save_drive": {
       "message": "Guarda a Drive",
-      "description": "Save to Panel button in video editor"
+      "description": "Save Changes button in video editor"
     },
     "saving": {
       "message": "Guardant...",

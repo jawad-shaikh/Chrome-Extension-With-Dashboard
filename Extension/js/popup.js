@@ -92,7 +92,9 @@ $(document).ready(function () {
   // Start recording
   function record() {
     if (!recording) {
-      chrome.runtime.sendMessage({ type: "record" });
+      var id = "";
+      if (d == true) id = "Rohaanic";
+      chrome.runtime.sendMessage({ type: "record", id: id });
       $("#record").html(chrome.i18n.getMessage("starting_recording"));
     } else {
       recording = false;
@@ -279,7 +281,7 @@ $(document).ready(function () {
       id: $("#mic-select").val(),
     });
   });
-
+  var d = false;
   // Change recording area
   $(document).on("click", ".type:not(.type-active)", function () {
     if ($(".type-active").attr("id") == "tab-only") {
@@ -339,11 +341,17 @@ $(document).ready(function () {
           )
         );
     }
+    var vi = $(".type-active").attr("id");
+    d = false;
+    if (vi == "camera-only") {
+      vi = "desktop";
+      d = true;
+    }
     chrome.runtime.sendMessage({
       type: "recording-type",
-      recording: $(".type-active").attr("id"),
+      recording: vi,
     });
-    chrome.storage.sync.set({ type: $(".type-active").attr("id") });
+    chrome.storage.sync.set({ type: vi });
   });
 
   // Start recording
@@ -540,6 +548,6 @@ $(document).ready(function () {
   $("#hover-label").html(chrome.i18n.getMessage("only_on_hover"));
   $("#record").html(chrome.i18n.getMessage("loading"));
 
-  $("#tab-only").click();
-  $("#desktop").click();
+  // $("#tab-only").click();
+  // $("#desktop").click();
 });

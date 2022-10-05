@@ -1,10 +1,10 @@
 {
     "extName": {
-      "message": "ScreenRecorder - Screen Recorder & Annotation Tool",
+      "message": "Recod",
       "description": "Extension name"
     },
     "extDesc": {
-      "message": "The most powerful screen recorder for Chrome. Capture, annotate, edit, and more.",
+      "message": "Recod, most powerful screen recorder for Chrome. Capture, annotate, edit, and more.",
       "description": "Extension description"
     },
     "extCancel": {
@@ -64,11 +64,11 @@
       "description": "Loading state in popup"
     },
     "start_recording": {
-      "message": "Start recording",
+      "message": "Record (Alt + R)",
       "description": "Start recording state in popup"
     },
     "starting_recording": {
-      "message": "Starting recording...",
+      "message": "Recording",
       "description": "Starting recording state in popup"
     },
     "cannot_record": {
@@ -168,8 +168,8 @@
       "description": "Download button in video editor"
     },
     "save_drive": {
-      "message": "Save to Panel",
-      "description": "Save to Panel button in video editor"
+      "message": "Save Changes",
+      "description": "Save Changes button in video editor"
     },
     "saving": {
       "message": "Saving...",
