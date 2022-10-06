@@ -1,3 +1,6 @@
+const localUrl = "https://localhost/Loom/";
+const serverUrl = "https://app.recod.io/";
+
 $(document).ready(function () {
   setTimeout(() => {
     saveAutomatically();
@@ -6,10 +9,15 @@ $(document).ready(function () {
   $("#share").css("cursor", "not-allowed");
 
   const closeBtn = document.querySelector(".closeBtn");
+  const updateTitleBtn = document.getElementById("updateTitleBtn");
 
   closeBtn.addEventListener("click", () => {
     closeBtn.parentElement.parentElement.classList.add("hide");
     showBosyMessage();
+  });
+
+  updateTitleBtn.addEventListener("click", () => {
+    updateTitle();
   });
 
   function showBosyMessage() {
@@ -41,7 +49,7 @@ $(document).ready(function () {
     copyLink.style.cursor = "pointer";
 
     copyLink.addEventListener("click", (e) => {
-      const finalUrl = `https://app.recod.io/Dashboard/single.php?vid=${url}`;
+      const finalUrl = `${serverUrl}Extension/single.php?vid=${url}`;
       e.preventDefault();
       copyMess.classList.add("active");
       navigator.clipboard.writeText(finalUrl);
@@ -247,7 +255,7 @@ $(document).ready(function () {
 
       $.ajax({
         type: "POST",
-        url: "https://app.recod.io/api/saveRecording.php",
+        url: `${serverUrl}/api/saveRecording.php`,
         data: form,
         processData: false,
         contentType: false,
@@ -273,14 +281,40 @@ $(document).ready(function () {
     $("#share").css("cursor", "pointer");
   }
 
-
-  function finishUploadMessage(){
-    const finishMsg = document.querySelector('.finish-msg');
-    finishMsg.classList.add('active');
+  function finishUploadMessage() {
+    const finishMsg = document.querySelector(".finish-msg");
+    finishMsg.classList.add("active");
 
     setTimeout(() => {
-      finishMsg.classList.remove('active');  
-    }, 2000)
+      finishMsg.classList.remove("active");
+    }, 2000);
+  }
+
+  // update title
+  function updateTitle() {
+    var title = $("#titleText").val();
+    var videoToReplace = videoUrlWhichJustGotSaved;
+
+    var form = new FormData();
+
+    form.append("title", title);
+    form.append("videoToReplace", videoToReplace);
+
+    chrome.storage.sync.get(["userId"], function (result) {
+      form.append("userId", result.userId);
+
+      $.ajax({
+        type: "POST",
+        url: `${serverUrl}api/updateTitle.php`,
+        data: form,
+        processData: false,
+        contentType: false,
+      }).done(function (data) {
+        if (data !== "") {
+          alert("updated title");
+        }
+      });
+    });
   }
 
   // Save on Drive
@@ -312,7 +346,7 @@ $(document).ready(function () {
 
       $.ajax({
         type: "POST",
-        url: "https://app.recod.io/api/updateRecording.php",
+        url: `${serverUrl}api/updateRecording.php`,
         data: form,
         processData: false,
         contentType: false,

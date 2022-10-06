@@ -1,4 +1,7 @@
 // on load to check user is already logged in
+
+const localUrl = 'http://localhost/Loom/';
+const serverUrl = 'https://app.recod.io/';
 $(document).ready(function () {
   chrome.storage.sync.get(["userId"], function (result) {
     if (result.userId != undefined) {
@@ -31,7 +34,7 @@ $(document).ready(function () {
       $(".success-message").slideUp();
     } else {
       $.ajax({
-        url: "https://app.recod.io/api/register.php",
+        url: `${serverUrl}/api/register.php`,
         type: "POST",
         data: {
           user_name: username,
@@ -48,7 +51,7 @@ $(document).ready(function () {
             setTimeout(() => {
               chrome.storage.sync.set({ userId: userObj.user_id }, function () {
                 chrome.tabs.create({
-                  url: `https://app.recod.io/Dashboard/login.php?token=${userObj.token}`,
+                  url: `${serverUrl}/Dashboard/login.php?token=${userObj.token}`,
                 });
               });
             }, 2000);
@@ -76,7 +79,7 @@ $(document).ready(function () {
       $(".success-message").slideUp();
     } else {
       $.ajax({
-        url: "https://app.recod.io/api/login.php",
+        url: `${serverUrl}api/login.php`,
         type: "POST",
         data: { login_email: loginemail, login_pass: loginpass },
         success: function (sth) {
@@ -88,7 +91,7 @@ $(document).ready(function () {
             chrome.storage.sync.set({ userId: userObj.user_id }, function () {
               setTimeout(() => {
                 chrome.tabs.create({
-                  url: `https://app.recod.io/Dashboard/login.php?token=${userObj.token}`,
+                  url: `${serverUrl}/Dashboard/login.php?token=${userObj.token}`,
                 });
               }, 2000);
             });

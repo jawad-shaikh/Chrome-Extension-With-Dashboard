@@ -153,7 +153,7 @@ if (isset($_GET['token'])) {
 
   <header class="header-lm">
 
-    <a href="index.html" class="anim"><img src="loom-images/loom-logo.png" alt="logo" style="mix-blend-mode: color-dodge" width="100px" /></a>
+    <a href="index.html" class="anim"><img src="loom-images/loom-logo.png" alt="logo" width="50px" /></a>
 
   </header>
 

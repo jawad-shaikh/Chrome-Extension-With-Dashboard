@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
 
   <header class="header-lm">
 
-    <a href="index.html" class="anim"><img src="loom-images/loom-logo.png" alt="logo" style="mix-blend-mode: color-dodge" width="150px" /></a>
+    <a href="index.html" class="anim"><img src="loom-images/loom-logo.png" alt="logo"  width="50px" /></a>
 
     <a href="login.php" class="signBtn anim">Login Here</a>
 

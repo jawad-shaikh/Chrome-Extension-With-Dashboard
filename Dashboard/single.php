@@ -46,6 +46,9 @@ if (isset($_GET['vid'])) {
 <html lang="zxx">
 
 
+<div class="copy-mess">
+  <p>Copied To Clipboard!</p>
+</div>
 
 <?php include "partials/header.php"; ?>
 
@@ -89,10 +92,10 @@ if (isset($_GET['vid'])) {
 
             <div class="video-info-section">
 
-              <h1 class="video-title">
-
+              <h1 class="video-title" <?php if (isset($_COOKIE["user_id"]) && isset($_COOKIE["session_id"]) && isset($_COOKIE["userName"])) {
+                                        echo 'contenteditable="true"';
+                                      } ?>>
                 <?= $video['title'] ?>
-
               </h1>
 
 
@@ -255,6 +258,30 @@ if (isset($_GET['vid'])) {
 
 <script src="js/single.js"></script>
 
+<script>
+  document.querySelector(".video-title").addEventListener("click", function(e) {
+    window.getSelection().selectAllChildren(e.target)
+  }, false);
 
+  document.querySelector(".video-title").addEventListener("input", function(e) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const vid = urlParams.get('vid');
+    const val = e.target.innerText;
+
+    $.ajax({
+      type: "POST",
+      url: `https://app.recod.io/api/updateTitle.php`,
+      data: {
+        title: val,
+        videoToReplace: vid
+      }
+    }).done(function(data) {
+      if (data !== "") {
+        console.log("updated title");
+      }
+    });
+
+  }, false);
+</script>
 
 </html>
