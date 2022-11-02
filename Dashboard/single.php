@@ -1,62 +1,35 @@
 <?php
-
 include('../config/db_connect.php');
-
 if (!isset($_COOKIE["user_id"]) && !isset($_COOKIE["session_id"]) && !isset($_COOKIE["userName"])) {
   $userNotLoggedIn = true;
 }
-
 if (isset($_GET['vid'])) {
-
   $vid = mysqli_real_escape_string($conn, $_GET['vid']);
-
   // fetching video
-
   $fetchVid = "SELECT sr.id, sr.user_id, sr.created_at, sr.video, sr.title, u.user_name FROM screen_recordings sr INNER JOIN user u on u.user_id = sr.user_id  WHERE sr.video = '$vid'";
-
   $fetchVidResult = mysqli_query($conn, $fetchVid);
-
   $video = mysqli_fetch_assoc($fetchVidResult);
-
   if ($video) {
-
     // fetching comments
-
     $videoId = $video['id'];
-
     $fetchComments = "SELECT c.comment, c.created_at, u.user_name FROM comments c LEFT JOIN user u ON c.user_id = u.user_id WHERE video_id = $videoId";
-
     $fetchCommentsResuilt = mysqli_query($conn, $fetchComments);
-
     $comments = mysqli_fetch_all($fetchCommentsResuilt);
   }
-
   mysqli_close($conn);
 } else {
-
   $video = null;
 }
-
 ?>
-
-
-
 <!DOCTYPE html>
-
 <html lang="zxx">
-
-
 <div class="copy-mess">
   <p>Copied To Clipboard!</p>
 </div>
-
 <?php include "partials/header.php"; ?>
-
 <style>
   .plyr {
-
     width: 85% !important;
-
   }
 </style>
 
@@ -76,14 +49,10 @@ if (isset($_GET['vid'])) {
 
 
 
-            <video controls>
-
+            <video controls type="video/mp4">
               <source src="<?php echo "../api/files/" . $video['video'] ?>" class="Videosrc" type="video/mp4" size="1080" />
-
-              <a href="<?php echo "../api/files/" . $video['video'] ?>" download>Download</a>
-
             </video>
-
+            <a href="<?php echo "../api/files/" . $video['video'] ?>" download>Download</a>
 
 
             <!--Video Information-->

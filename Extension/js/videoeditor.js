@@ -11,10 +11,12 @@ $(document).ready(function () {
   const closeBtn = document.querySelector(".closeBtn");
   const updateTitleBtn = document.getElementById("updateTitleBtn");
 
+ if(closeBtn !== null){
   closeBtn.addEventListener("click", () => {
     closeBtn.parentElement.parentElement.classList.add("hide");
     showBosyMessage();
   });
+ }
 
   updateTitleBtn.addEventListener("click", () => {
     updateTitle();

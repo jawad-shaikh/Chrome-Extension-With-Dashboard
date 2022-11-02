@@ -1,12 +1,90 @@
-[25-Sep-2022 13:56:10 America/New_York] PHP Notice:  Undefined index: user_name in /home/aetsqfgb/app.recod.io/api/register.php on line 5
-[25-Sep-2022 13:56:10 America/New_York] PHP Notice:  Undefined index: user_email in /home/aetsqfgb/app.recod.io/api/register.php on line 6
-[25-Sep-2022 13:56:10 America/New_York] PHP Notice:  Undefined index: user_pass in /home/aetsqfgb/app.recod.io/api/register.php on line 7
-[25-Sep-2022 13:56:12 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
-[25-Sep-2022 13:56:12 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
-[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
-[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
-[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
-[25-Sep-2022 14:03:08 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
-[25-Sep-2022 14:22:07 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/comment.php on line 7
-[25-Sep-2022 14:22:07 America/New_York] PHP Notice:  Undefined index: videoId in /home/aetsqfgb/app.recod.io/api/comment.php on line 8
-[25-Sep-2022 14:22:07 America/New_York] PHP Notice:  Undefined index: comment in /home/aetsqfgb/app.recod.io/api/comment.php on line 9
+[15-Oct-2022 12:36:28 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 12:36:28 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 12:36:28 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 12:36:28 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 12:41:50 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 12:41:50 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 12:41:50 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 12:41:50 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:00:21 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:00:21 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:00:21 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:00:21 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:01:21 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:01:21 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:01:21 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:01:21 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:01:59 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:01:59 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:01:59 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:01:59 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:10:54 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:10:54 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:10:54 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:10:54 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:15:48 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:15:48 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:15:48 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:15:48 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:17:26 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:17:26 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:17:26 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:17:26 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:17:56 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:17:56 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:17:56 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:17:56 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:22:41 America/New_York] PHP Notice:  Undefined index: userId in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[15-Oct-2022 13:22:41 America/New_York] PHP Notice:  Undefined index: title in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[15-Oct-2022 13:22:41 America/New_York] PHP Notice:  Undefined index: file in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:22:41 America/New_York] PHP Notice:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[15-Oct-2022 13:42:40 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 13:42:40 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 13:42:55 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 13:42:55 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 13:43:07 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 13:43:07 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 13:58:42 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 13:58:42 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:00:29 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:00:29 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:00:46 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:00:46 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:03:46 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:03:46 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:05:09 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:05:09 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:05:20 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:05:20 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:05:32 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:05:32 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:08:45 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:08:45 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:23:56 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:23:56 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[15-Oct-2022 14:24:29 America/New_York] PHP Notice:  Undefined index: login_email in /home/aetsqfgb/app.recod.io/api/login.php on line 5
+[15-Oct-2022 14:24:29 America/New_York] PHP Notice:  Undefined index: login_pass in /home/aetsqfgb/app.recod.io/api/login.php on line 6
+[21-Oct-2022 02:52:44 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[21-Oct-2022 02:52:44 America/New_York] PHP Warning:  Undefined array key "title" in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[21-Oct-2022 02:52:44 America/New_York] PHP Warning:  Undefined array key "file" in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[21-Oct-2022 02:52:44 America/New_York] PHP Warning:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[21-Oct-2022 02:54:02 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 6
+[21-Oct-2022 02:54:02 America/New_York] PHP Warning:  Undefined array key "title" in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 7
+[21-Oct-2022 02:54:02 America/New_York] PHP Warning:  Undefined array key "file" in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[21-Oct-2022 02:54:02 America/New_York] PHP Warning:  Trying to access array offset on value of type null in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 8
+[21-Oct-2022 03:17:55 America/New_York] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},'635247a38d3aa635247a38d3b0.mp4', '"sth"')' at line 1 in /home/aetsqfgb/app.recod.io/api/saveRecording.php:18
+Stack trace:
+#0 /home/aetsqfgb/app.recod.io/api/saveRecording.php(18): mysqli_query()
+#1 {main}
+  thrown in /home/aetsqfgb/app.recod.io/api/saveRecording.php on line 18
+[21-Oct-2022 03:30:55 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[21-Oct-2022 03:30:55 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[21-Oct-2022 03:30:55 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[21-Oct-2022 03:30:56 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[21-Oct-2022 03:30:56 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[21-Oct-2022 03:30:56 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[25-Oct-2022 13:53:23 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[25-Oct-2022 13:53:23 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[25-Oct-2022 13:53:23 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[25-Oct-2022 13:53:27 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7
+[25-Oct-2022 13:53:27 America/New_York] PHP Warning:  Undefined array key "userId" in /home/aetsqfgb/app.recod.io/api/updateTitle.php on line 7

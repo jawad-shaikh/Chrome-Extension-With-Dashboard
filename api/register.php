@@ -1,6 +1,6 @@
 <?php
 
-
+header('Access-Control-Allow-Origin: *');
 
 include "../config/db_connect.php";
 

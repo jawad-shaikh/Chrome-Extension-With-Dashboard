@@ -16,7 +16,7 @@ if (!isset($_COOKIE["user_id"]) && !isset($_COOKIE["session_id"]) && !isset($_CO
 
   if (mysqli_num_rows($result) > 0) {
 
-    $sql = "SELECT * FROM screen_recordings WHERE user_id = $user_id ORDER BY created_at";
+    $sql = "SELECT * FROM screen_recordings WHERE user_id = $user_id ORDER BY created_at DESC";
 
     $result = mysqli_query($conn, $sql);
 
@@ -87,14 +87,10 @@ if (!isset($_COOKIE["user_id"]) && !isset($_COOKIE["session_id"]) && !isset($_CO
 
                   <div class="col-first">
 
-                    <video>
-
+                    <video type="video/mp4">
                       <source src="<?php echo "../api/files/" . $video['video'] ?>" type="video/mp4" size="1080" />
-
-                      <a href="<?php echo "../api/files/" . $video['video'] ?>" download>Download</a>
-
                     </video>
-
+                    <a href="<?php echo "../api/files/" . $video['video'] ?>" download>Download</a>
                     <a href="single.php?vid=<?php echo $video['video'] ?>" class="video-goto">
 
                       <ion-icon name="play-outline"></ion-icon>

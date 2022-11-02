@@ -267,3 +267,148 @@
 [29-Sep-2022 09:52:45 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 39
 [29-Sep-2022 09:52:45 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 37
 [29-Sep-2022 09:52:52 America/New_York] PHP Notice:  session_start(): A session had already been started - ignoring in /home/aetsqfgb/app.recod.io/Dashboard/login.php on line 17
+[06-Oct-2022 10:07:56 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[06-Oct-2022 10:07:56 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[06-Oct-2022 11:18:09 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[06-Oct-2022 11:18:09 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[06-Oct-2022 11:18:09 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[06-Oct-2022 14:17:08 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[06-Oct-2022 14:17:08 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[06-Oct-2022 14:17:08 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[07-Oct-2022 16:50:15 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[07-Oct-2022 16:50:15 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[07-Oct-2022 16:50:15 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 00:13:34 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[08-Oct-2022 00:13:34 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 00:13:34 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 00:30:06 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[08-Oct-2022 00:30:06 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 00:30:06 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 18:42:27 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[08-Oct-2022 18:42:27 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 18:42:27 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 19:51:45 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[08-Oct-2022 19:51:45 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 19:51:45 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 21:50:51 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[08-Oct-2022 21:50:51 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[08-Oct-2022 21:50:51 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 02:33:16 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 02:33:16 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 06:40:35 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[09-Oct-2022 06:40:35 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 06:40:35 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 09:28:51 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[09-Oct-2022 09:28:51 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 09:28:51 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 15:36:13 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[09-Oct-2022 15:36:13 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[09-Oct-2022 15:36:13 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 00:15:47 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[10-Oct-2022 00:15:47 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 00:15:47 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 03:41:56 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[10-Oct-2022 03:41:56 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 03:41:56 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 11:49:50 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[10-Oct-2022 11:49:50 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 11:49:50 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 11:50:10 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[10-Oct-2022 11:50:10 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[10-Oct-2022 11:50:10 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[11-Oct-2022 13:01:51 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[11-Oct-2022 13:01:51 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[11-Oct-2022 13:01:51 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 05:00:10 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[13-Oct-2022 05:00:34 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[13-Oct-2022 05:00:34 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 05:00:34 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 05:00:47 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[13-Oct-2022 05:00:47 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 05:00:47 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 08:34:14 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[13-Oct-2022 08:34:14 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 08:34:14 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 20:06:11 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[13-Oct-2022 20:06:11 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[13-Oct-2022 20:06:11 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[14-Oct-2022 18:13:05 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[14-Oct-2022 18:13:05 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[14-Oct-2022 18:13:05 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[14-Oct-2022 19:53:10 America/New_York] PHP Warning:  unlink(../api/files/6349f5996b75e6349f5996b763.mp4): No such file or directory in /home/aetsqfgb/app.recod.io/Dashboard/deleteVid.php on line 27
+[14-Oct-2022 20:03:26 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[14-Oct-2022 20:03:26 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[14-Oct-2022 20:03:26 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[16-Oct-2022 18:45:15 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[16-Oct-2022 18:45:15 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[16-Oct-2022 18:45:15 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[17-Oct-2022 12:06:24 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[17-Oct-2022 12:06:24 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[17-Oct-2022 12:06:24 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[18-Oct-2022 06:15:06 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[18-Oct-2022 06:15:06 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[18-Oct-2022 06:15:06 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 08:02:36 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[19-Oct-2022 08:02:36 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 08:02:36 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 08:02:40 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[19-Oct-2022 08:02:40 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 08:02:40 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 08:04:13 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[19-Oct-2022 08:04:13 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 08:04:13 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 18:08:29 America/New_York] PHP Notice:  Undefined index: userName in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[19-Oct-2022 18:08:29 America/New_York] PHP Notice:  Undefined variable: videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[19-Oct-2022 18:08:29 America/New_York] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 00:23:43 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[24-Oct-2022 00:23:43 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 00:23:43 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 00:29:36 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[24-Oct-2022 00:29:36 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 00:29:36 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 16:24:25 America/New_York] PHP Fatal error:  Uncaught (Status 400) (Request req_QBLSMomzpUfrOF) Received unknown parameter: line_items[0][price_data][product_data][unit_amount]
+  thrown in /home/aetsqfgb/app.recod.io/vendor/stripe/stripe-php/lib/Exception/ApiErrorException.php on line 38
+[24-Oct-2022 17:41:27 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[24-Oct-2022 17:41:27 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 17:41:27 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 17:45:50 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[24-Oct-2022 17:45:50 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 17:45:50 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 19:13:46 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[24-Oct-2022 19:13:46 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 19:13:46 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 19:16:59 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[24-Oct-2022 19:16:59 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 19:16:59 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 22:57:49 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[24-Oct-2022 22:57:49 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[24-Oct-2022 22:57:49 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[27-Oct-2022 00:39:54 America/New_York] PHP Parse error:  syntax error, unexpected token "use" in /home/aetsqfgb/app.recod.io/Dashboard/stripe.php on line 7
+[27-Oct-2022 00:39:58 America/New_York] PHP Parse error:  syntax error, unexpected token "use" in /home/aetsqfgb/app.recod.io/Dashboard/stripe.php on line 7
+[29-Oct-2022 05:46:03 America/New_York] PHP Warning:  Undefined array key "userName" in /home/aetsqfgb/app.recod.io/Dashboard/partials/header.php on line 77
+[29-Oct-2022 05:46:03 America/New_York] PHP Warning:  Undefined variable $videos in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
+[29-Oct-2022 05:46:03 America/New_York] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home/aetsqfgb/app.recod.io/Dashboard/index.php:76
+Stack trace:
+#0 {main}
+  thrown in /home/aetsqfgb/app.recod.io/Dashboard/index.php on line 76
