@@ -83,7 +83,7 @@ $(document).ready(function () {
     var url = window.URL.createObjectURL(superBuffer);
   }
 
-  $("#video").attr("src", url);
+  $("#video").attr("src", url + "#t=" + blobs.length);
   $("#g-savetodrive").attr("src", url);
   $("#format-select").niceSelect();
 

@@ -151,8 +151,8 @@ $(document).ready(function () {
             
             <div id="AllOptions" class="tool" title="Options">
                 <img src="${chrome.extension.getURL(
-                  "./assets/images/arrow.svg"
-                )}" />
+        "./assets/images/arrow.svg"
+      )}" />
             </div>
             <div id="CancelRecording" class="tool hide-toools" title="Cancel Recording"><img src=" 
             ${chrome.extension.getURL("./assets/images/cancel.svg")} 
@@ -475,7 +475,7 @@ $(document).ready(function () {
   canvas.on("text:changed", function () {
     var linewidth =
       canvas.getActiveObject().__lineWidths[
-        canvas.getActiveObject().__lineWidths.length - 1
+      canvas.getActiveObject().__lineWidths.length - 1
       ];
     if (!isNaN(linewidth) && linewidth + 40 > canvas.getActiveObject().width) {
       canvas.getActiveObject().set("width", linewidth + 40);
@@ -813,7 +813,7 @@ $(document).ready(function () {
       $("#" + uniqueid + " #toolbar-record-pen").has(e.target).length === 0 &&
       !$("#" + uniqueid + " #toolbar-record-cursor").is(e.target) &&
       $("#" + uniqueid + " #toolbar-record-cursor").has(e.target).length ===
-        0 &&
+      0 &&
       !$("#" + uniqueid + " #toolbar-settings").is(e.target) &&
       $("#" + uniqueid + " #toolbar-settings").has(e.target).length === 0 &&
       !$("#" + uniqueid + " #pen-slider").is(e.target) &&
@@ -849,13 +849,13 @@ $(document).ready(function () {
     if (
       !$("#" + uniqueid + " .pcr-app").is(e.target) &&
       ($("#" + uniqueid + " .pcr-app").has(e.target).length === 0) &
-        !$("#" + uniqueid + " #toolbar-record").is(e.target) &&
+      !$("#" + uniqueid + " #toolbar-record").is(e.target) &&
       $("#" + uniqueid + " #toolbar-record").has(e.target).length === 0 &&
       !$("#" + uniqueid + " #toolbar-record-pen").is(e.target) &&
       $("#" + uniqueid + " #toolbar-record-pen").has(e.target).length === 0 &&
       !$("#" + uniqueid + " #toolbar-record-cursor").is(e.target) &&
       $("#" + uniqueid + " #toolbar-record-cursor").has(e.target).length ===
-        0 &&
+      0 &&
       !$("#" + uniqueid + " #toolbar-settings").is(e.target) &&
       $("#" + uniqueid + " #toolbar-settings").has(e.target).length === 0 &&
       !$("#" + uniqueid + " #pen-slider").is(e.target) &&
@@ -1327,6 +1327,16 @@ $(document).ready(function () {
           "toolbar-inactive"
         );
       }
+      if ($("#" + uniqueid + " #pen-tool").hasClass("tool-active")) {
+        $("#" + uniqueid + " #pen-slider").addClass("toolbar-inactive");
+        drawing = false;
+        $("#" + uniqueid + " #canvas-freedraw").css("pointer-events", "none");
+        $("#" + uniqueid + " #pen-tool").removeClass("tool-active");
+        $("#" + uniqueid + " #pen-tool img").attr(
+          "src",
+          chrome.extension.getURL("./assets/images/pen.svg")
+        );
+      }
     }
   );
 
@@ -1564,6 +1574,19 @@ $(document).ready(function () {
   $(document).on("click", "#clear", function () {
     canvas.clear();
     ctx_free.clearRect(0, 0, canvas_free.width, canvas_free.height);
+    if ($("#" + uniqueid + " #pen-tool").hasClass("tool-active")) {
+      $("#" + uniqueid + " #pen-slider").addClass("toolbar-inactive");
+      drawing = false;
+      $("#" + uniqueid + " #canvas-freedraw").css("pointer-events", "none");
+      $("#" + uniqueid + " #pen-tool").removeClass("tool-active");
+      $("#" + uniqueid + " #pen-tool img").attr(
+        "src",
+        chrome.extension.getURL("./assets/images/pen.svg")
+      );
+    }
+    else {
+
+    }
   });
 
   // Listen for popup/background/content messages

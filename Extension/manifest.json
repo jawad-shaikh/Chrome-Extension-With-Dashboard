@@ -31,8 +31,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["js/detect.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/detect.js"
+      ]
     }
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval' chrome-extension://kbbdabhdfibnancpjfhlkhafgdilcnji/js/libraries/ffmpeg.js 'unsafe-inline'; object-src 'self'",

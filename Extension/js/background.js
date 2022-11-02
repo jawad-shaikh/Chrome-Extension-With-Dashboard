@@ -105,7 +105,8 @@ function endRecording(stream, writer, recordedBlobs) {
 
   // Hide injected content
   recording = false;
-  chrome.tabs.getSelected(null, function (tab) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var tab = tabs[0];
     chrome.tabs.sendMessage(tab.id, {
       type: "end",
     });
@@ -201,7 +202,8 @@ function getDesktop(cb) {
 
 // Start recording the current tab
 function getTab() {
-  chrome.tabs.getSelected(null, function (tab) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var tab = tabs[0];
     chrome.tabCapture.capture(
       {
         video: true,
@@ -343,149 +345,311 @@ function record(cb = null) {
     });
   });
 }
-
+var tabsid = [];
 // Inject content script
 function injectContent(start) {
   chrome.storage.sync.get(["countdown"], function (result) {
-    chrome.tabs.getSelected(null, function (tab) {
-      if (maintabs.indexOf(tab.id) == -1 && recording_type != "camera-only") {
-        // Inject content if it's not a camera recording and the script hasn't been injected before in this tab
-        tabid = tab.id;
-        chrome.tabs.executeScript(tab.id, {
-          file: "./js/libraries/jquery-3.5.1.min.js",
-        });
-        chrome.tabs.executeScript(tab.id, {
-          file: "./js/libraries/fabric.min.js",
-        });
-        chrome.tabs.executeScript(tab.id, {
-          file: "./js/libraries/pickr.min.js",
-        });
-        chrome.tabs.executeScript(tab.id, {
-          file: "./js/libraries/arrow.js",
-        });
+    // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) { var tab = tabs[0];
+    setTimeout(() => {
 
-        // Check if it's a new or ongoing recording
-        if (start) {
-          chrome.tabs.executeScript(
-            tab.id,
-            {
-              code:
-                "window.countdownactive = " +
-                result.countdown +
-                ';window.camerasize = "' +
-                camerasize +
-                '";window.camerapos = {x:"' +
-                camerapos.x +
-                '",y:"' +
-                camerapos.y +
-                '"};',
-            },
-            function () {
-              chrome.tabs.executeScript(tab.id, {
-                file: "./js/content.js",
-              });
-            }
-          );
-        } else {
-          chrome.tabs.executeScript(
-            tab.id,
-            {
-              code:
-                'window.countdownactive = false;window.camerasize = "' +
-                camerasize +
-                '";window.camerapos = {x:"' +
-                camerapos.x +
-                '",y:"' +
-                camerapos.y +
-                '"};',
-            },
-            function () {
-              chrome.tabs.executeScript(tab.id, {
-                file: "./js/content.js",
-              });
-            }
-          );
-        }
-
-        chrome.tabs.insertCSS(tab.id, {
-          file: "./css/content.css",
-        });
-        chrome.tabs.insertCSS(tab.id, {
-          file: "./css/libraries/pickr.css",
-        });
-        maintabs.push(tab.id);
-      } else if (
-        camtabs.indexOf(tab.id) == -1 &&
-        recording_type == "camera-only"
-      ) {
-        // Inject content for camera recording if the script hasn't been injected before in this tab
-        tabid = tab.id;
-        chrome.tabs.executeScript(tab.id, {
-          file: "./js/libraries/jquery-3.5.1.min.js",
-        });
-
-        // Check if it's a new or ongoing recording
-        if (start) {
-          chrome.tabs.executeScript(
-            tab.id,
-            {
-              code: "window.countdownactive = " + result.countdown,
-            },
-            function () {
-              chrome.tabs.executeScript(tab.id, {
-                file: "./js/cameracontent.js",
-              });
-            }
-          );
-        } else {
-          chrome.tabs.executeScript(
-            tab.id,
-            {
-              code: "window.countdownactive = false;",
-            },
-            function () {
-              chrome.tabs.executeScript(tab.id, {
-                file: "./js/cameracontent.js",
-              });
-            }
-          );
-        }
-
-        chrome.tabs.insertCSS(tab.id, {
-          file: "./css/cameracontent.css",
-        });
-        camtabs.push(tab.id);
-      } else {
-        // If the current tab already has the script injected
-        if (recording_type == "camera-only") {
-          if (start) {
-            chrome.tabs.sendMessage(tab.id, {
-              type: "restart-cam",
-              countdown: result.countdown,
-            });
-          } else {
-            chrome.tabs.sendMessage(tab.id, {
-              type: "restart-cam",
-              countdown: false,
-            });
-          }
-        } else {
-          if (start) {
-            chrome.tabs.sendMessage(tab.id, {
-              type: "restart",
-              countdown: result.countdown,
-            });
-          } else {
-            chrome.tabs.sendMessage(tab.id, {
-              type: "restart",
-              countdown: false,
-              camerapos: camerapos,
-              camerasize: camerasize,
-            });
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tab = tabs[0];
+        if (!start) {
+          if (tabsid.includes(tab.id)) {
+            return;
           }
         }
-      }
-    });
+        else {
+          tabsid = [];
+        }
+
+        tabsid.push(tab.id);
+        if (maintabs.indexOf(tab.id) == -1 && recording_type != "camera-only") {
+          // Inject content if it's not a camera recording and the script hasn't been injected before in this tab
+          tabid = tabs.id;
+          chrome.tabs.executeScript(tab.id, {
+            file: "./js/libraries/jquery-3.5.1.min.js",
+          });
+          chrome.tabs.executeScript(tab.id, {
+            file: "./js/libraries/fabric.min.js",
+          });
+          chrome.tabs.executeScript(tab.id, {
+            file: "./js/libraries/pickr.min.js",
+          });
+          chrome.tabs.executeScript(tab.id, {
+            file: "./js/libraries/arrow.js",
+          });
+
+          // Check if it's a new or ongoing recording
+          if (start) {
+            chrome.tabs.executeScript(
+              tab.id,
+              {
+                code:
+                  "window.countdownactive = " +
+                  result.countdown +
+                  ';window.camerasize = "' +
+                  camerasize +
+                  '";window.camerapos = {x:"' +
+                  camerapos.x +
+                  '",y:"' +
+                  camerapos.y +
+                  '"};',
+              },
+              function () {
+                chrome.tabs.executeScript(tab.id, {
+                  file: "./js/content.js",
+                });
+              }
+            );
+          } else {
+            chrome.tabs.executeScript(
+              tab.id,
+              {
+                code:
+                  'window.countdownactive = false;window.camerasize = "' +
+                  camerasize +
+                  '";window.camerapos = {x:"' +
+                  camerapos.x +
+                  '",y:"' +
+                  camerapos.y +
+                  '"};',
+              },
+              function () {
+                chrome.tabs.executeScript(tab.id, {
+                  file: "./js/content.js",
+                });
+              }
+            );
+          }
+
+          chrome.tabs.insertCSS(tab.id, {
+            file: "./css/content.css",
+          });
+          chrome.tabs.insertCSS(tab.id, {
+            file: "./css/libraries/pickr.css",
+          });
+          maintabs.push(tab.id);
+        } else if (
+          camtabs.indexOf(tab.id) == -1 &&
+          recording_type == "camera-only"
+        ) {
+          // Inject content for camera recording if the script hasn't been injected before in this tab
+          tabid = tab.id;
+          chrome.tabs.executeScript(tab.id, {
+            file: "./js/libraries/jquery-3.5.1.min.js",
+          });
+
+          // Check if it's a new or ongoing recording
+          if (start) {
+            chrome.tabs.executeScript(
+              tab.id,
+              {
+                code: "window.countdownactive = " + result.countdown,
+              },
+              function () {
+                chrome.tabs.executeScript(tab.id, {
+                  file: "./js/cameracontent.js",
+                });
+              }
+            );
+          } else {
+            chrome.tabs.executeScript(
+              tab.id,
+              {
+                code: "window.countdownactive = false;",
+              },
+              function () {
+                chrome.tabs.executeScript(tab.id, {
+                  file: "./js/cameracontent.js",
+                });
+              }
+            );
+          }
+
+          chrome.tabs.insertCSS(tab.id, {
+            file: "./css/cameracontent.css",
+          });
+          camtabs.push(tab.id);
+        } else {
+          // If the current tab already has the script injected
+          if (recording_type == "camera-only") {
+            if (start) {
+              chrome.tabs.sendMessage(tab.id, {
+                type: "restart-cam",
+                countdown: result.countdown,
+              });
+            } else {
+              chrome.tabs.sendMessage(tab.id, {
+                type: "restart-cam",
+                countdown: false,
+              });
+            }
+          } else {
+            if (start) {
+              chrome.tabs.sendMessage(tab.id, {
+                type: "restart",
+                countdown: result.countdown,
+              });
+            } else {
+              chrome.tabs.sendMessage(tab.id, {
+                type: "restart",
+                countdown: false,
+                camerapos: camerapos,
+                camerasize: camerasize,
+              });
+            }
+          }
+        }
+      });
+
+    }, 500);
+    // chrome.tabs.query({}, function (tabs) {
+    //   for (var i = 0; i < tabs.length; i++) {
+    //     console.log(tabs[i].id);
+    //     console.log(tabs[i]);
+    //     if (tabs[i].url.includes("chrome://")) {
+    //       continue;
+    //     }
+    //     if (maintabs.indexOf(tabs[i].id) == -1 && recording_type != "camera-only") {
+    //       // Inject content if it's not a camera recording and the script hasn't been injected before in this tab
+    //       tabid = tabs[i].id;
+    //       chrome.tabs.executeScript(tabs[i].id, {
+    //         file: "./js/libraries/jquery-3.5.1.min.js",
+    //       });
+    //       chrome.tabs.executeScript(tabs[i].id, {
+    //         file: "./js/libraries/fabric.min.js",
+    //       });
+    //       chrome.tabs.executeScript(tabs[i].id, {
+    //         file: "./js/libraries/pickr.min.js",
+    //       });
+    //       chrome.tabs.executeScript(tabs[i].id, {
+    //         file: "./js/libraries/arrow.js",
+    //       });
+
+    //       // Check if it's a new or ongoing recording
+    //       if (start) {
+    //         chrome.tabs.executeScript(
+    //           tabs[i].id,
+    //           {
+    //             code:
+    //               "window.countdownactive = " +
+    //               result.countdown +
+    //               ';window.camerasize = "' +
+    //               camerasize +
+    //               '";window.camerapos = {x:"' +
+    //               camerapos.x +
+    //               '",y:"' +
+    //               camerapos.y +
+    //               '"};',
+    //           },
+    //           function () {
+    //             chrome.tabs.executeScript(tabid, {
+    //               file: "./js/content.js",
+    //             });
+    //           }
+    //         );
+    //       } else {
+    //         chrome.tabs.executeScript(
+    //           tabs[i].id,
+    //           {
+    //             code:
+    //               'window.countdownactive = false;window.camerasize = "' +
+    //               camerasize +
+    //               '";window.camerapos = {x:"' +
+    //               camerapos.x +
+    //               '",y:"' +
+    //               camerapos.y +
+    //               '"};',
+    //           },
+    //           function () {
+    //             chrome.tabs.executeScript(tabid, {
+    //               file: "./js/content.js",
+    //             });
+    //           }
+    //         );
+    //       }
+
+    //       chrome.tabs.insertCSS(tabs[i].id, {
+    //         file: "./css/content.css",
+    //       });
+    //       chrome.tabs.insertCSS(tabs[i].id, {
+    //         file: "./css/libraries/pickr.css",
+    //       });
+    //       maintabs.push(tabs[i].id);
+    //     } else if (
+    //       camtabs.indexOf(tabs[i].id) == -1 &&
+    //       recording_type == "camera-only"
+    //     ) {
+    //       // Inject content for camera recording if the script hasn't been injected before in this tab
+    //       tabid = tabs[i].id;
+    //       chrome.tabs.executeScript(tabs[i].id, {
+    //         file: "./js/libraries/jquery-3.5.1.min.js",
+    //       });
+
+    //       // Check if it's a new or ongoing recording
+    //       if (start) {
+    //         chrome.tabs.executeScript(
+    //           tabs[i].id,
+    //           {
+    //             code: "window.countdownactive = " + result.countdown,
+    //           },
+    //           function () {
+    //             chrome.tabs.executeScript(tabs[i].id, {
+    //               file: "./js/cameracontent.js",
+    //             });
+    //           }
+    //         );
+    //       } else {
+    //         chrome.tabs.executeScript(
+    //           tabs[i].id,
+    //           {
+    //             code: "window.countdownactive = false;",
+    //           },
+    //           function () {
+    //             chrome.tabs.executeScript(tabs[i].id, {
+    //               file: "./js/cameracontent.js",
+    //             });
+    //           }
+    //         );
+    //       }
+
+    //       chrome.tabs.insertCSS(tabs[i].id, {
+    //         file: "./css/cameracontent.css",
+    //       });
+    //       camtabs.push(tabs[i].id);
+    //     } else {
+    //       // If the current tab already has the script injected
+    //       if (recording_type == "camera-only") {
+    //         if (start) {
+    //           chrome.tabs.sendMessage(tabs[i].id, {
+    //             type: "restart-cam",
+    //             countdown: result.countdown,
+    //           });
+    //         } else {
+    //           chrome.tabs.sendMessage(tabs[i].id, {
+    //             type: "restart-cam",
+    //             countdown: false,
+    //           });
+    //         }
+    //       } else {
+    //         if (start) {
+    //           chrome.tabs.sendMessage(tabs[i].id, {
+    //             type: "restart",
+    //             countdown: result.countdown,
+    //           });
+    //         } else {
+    //           chrome.tabs.sendMessage(tabs[i].id, {
+    //             type: "restart",
+    //             countdown: false,
+    //             camerapos: camerapos,
+    //             camerasize: camerasize,
+    //           });
+    //         }
+    //       }
+    //     }
+    //   }
+    // });
   });
 }
 
@@ -510,7 +674,8 @@ function updateMicrophone(id, request) {
       });
 
       // Start a new microphone stream using the provided device ID
-      chrome.tabs.getSelected(null, function (tab) {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tab = tabs[0];
         navigator.mediaDevices
           .getUserMedia({
             audio: {
@@ -561,7 +726,8 @@ function stopRecording(save) {
     path: "../assets/extension-icons/logo-32.png",
   });
 
-  chrome.tabs.getSelected(null, function (tab) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var tab = tabs[0];
     // Check if recording has to be saved or discarded
     if (save == "stop" || save == "stop-save") {
       cancel = false;
@@ -613,7 +779,8 @@ function audioSwitch(source, enable) {
   if (recording_type != "camera-only") {
     // Start a new microphone stream if one doesn't exist already
     if (!micable) {
-      chrome.tabs.getSelected(null, function (tab) {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tab = tabs[0];
         navigator.mediaDevices
           .getUserMedia({
             audio: true,
@@ -641,7 +808,8 @@ function audioSwitch(source, enable) {
       syssource.connect(destination);
     }
   } else {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: "mic-switch",
         enable: enable,
@@ -652,7 +820,8 @@ function audioSwitch(source, enable) {
 
 // Update camera device
 function updateCamera(request) {
-  chrome.tabs.getSelected(null, function (tab) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var tab = tabs[0];
     // Save user preference
     chrome.storage.sync.set({
       camera: request.id,
@@ -668,7 +837,8 @@ function updateCamera(request) {
 
 // Toggle push to talk
 function pushToTalk(request, id) {
-  chrome.tabs.getSelected(null, function (tab) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var tab = tabs[0];
     pushtotalk = request.enabled;
 
     // Send user preference to content script
@@ -682,7 +852,8 @@ function pushToTalk(request, id) {
 // Countdown is over / recording can start
 function countdownOver() {
   if (recording_type == "camera-only") {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: "camera-record",
       });
@@ -697,7 +868,8 @@ function countdownOver() {
 
 // Inject content when tab redirects while recording
 function pageUpdated(sender) {
-  chrome.tabs.getSelected(null, function (tab) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var tab = tabs[0];
     if (sender.tab.id == tab.id) {
       if (recording && tab.id == tabid && recording_type == "tab-only") {
         injectContent(false);
@@ -717,8 +889,12 @@ function pageUpdated(sender) {
 chrome.tabs.onActivated.addListener(function (tabId, changeInfo, tab) {
   if (!recording) {
     // Hide injected content if the recording is already over
-    chrome.tabs.getSelected(null, function (tab) {
-      chrome.tabs.sendMessage(tab.id, {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (stab) {
+      var tid = tabid;
+      if (stab != undefined) {
+        tid = stab[0].id;
+      }
+      chrome.tabs.sendMessage(stab[0].id, {
         type: "end",
       });
     });
@@ -751,7 +927,8 @@ chrome.commands.onCommand.addListener(function (command) {
     if (command == "stop") {
       stopRecording(command);
     } else if (command == "pause/resume") {
-      chrome.tabs.getSelected(null, function (tab) {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tab = tabs[0];
         chrome.tabs.sendMessage(tab.id, {
           type: "pause/resume",
         });
@@ -759,7 +936,8 @@ chrome.commands.onCommand.addListener(function (command) {
     } else if (command == "cancel") {
       stopRecording(command);
     } else if (command == "mute/unmute" && !pushtotalk) {
-      chrome.tabs.getSelected(null, function (tab) {
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var tab = tabs[0];
         chrome.tabs.sendMessage(tab.id, {
           type: "mute/unmute",
         });
@@ -777,7 +955,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       camerasize = "xlarge-size";
       startRecording((val) => {
         setTimeout(() => {
-          chrome.tabs.getSelected(null, function (tab) {
+          chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            var tab = tabs[0];
             chrome.tabs.sendMessage(tab.id, {
               type: "Rohaanic",
             });
@@ -806,7 +985,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   } else if (request.type == "audio-switch") {
     audioSwitch(request.source, request.enable);
   } else if (request.type == "camera-list") {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: request.type,
         devices: request.devices,
@@ -814,7 +994,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       });
     });
   } else if (request.type == "flip-camera") {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: request.type,
         enabled: request.enabled,
@@ -823,7 +1004,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   } else if (request.type == "push-to-talk") {
     pushtotalk(request);
   } else if (request.type == "switch-toolbar") {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: request.type,
         enabled: request.enabled,
@@ -836,19 +1018,22 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   } else if (request.type == "record-request") {
     sendResponse({ recording: recording });
   } else if (request.type == "pause-camera") {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: "pause-camera",
       });
     });
   } else if (request.type == "resume-camera") {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: "resume-record",
       });
     });
   } else if (request.type == "no-camera-access") {
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: "no-camera-access",
       });
@@ -857,7 +1042,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     getDeviceId();
   } else if (request.type == "end-camera-recording") {
     recording = false;
-    chrome.tabs.getSelected(null, function (tab) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var tab = tabs[0];
       chrome.tabs.sendMessage(tab.id, {
         type: "end-recording",
       });
@@ -876,7 +1062,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log(request);
     //startRecording();
 
-    // chrome.tabs.getSelected(null, function (tab) {
+    // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) { var tab = tabs[0];
     //   chrome.tabs.sendMessage(tab.id, {
     //     type: "hello",
     //   });
