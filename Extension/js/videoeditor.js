@@ -11,12 +11,12 @@ $(document).ready(function () {
   const closeBtn = document.querySelector(".closeBtn");
   const updateTitleBtn = document.getElementById("updateTitleBtn");
 
- if(closeBtn !== null){
-  closeBtn.addEventListener("click", () => {
-    closeBtn.parentElement.parentElement.classList.add("hide");
-    showBosyMessage();
-  });
- }
+  if (closeBtn !== null) {
+    closeBtn.addEventListener("click", () => {
+      closeBtn.parentElement.parentElement.classList.add("hide");
+      showBosyMessage();
+    });
+  }
 
   updateTitleBtn.addEventListener("click", () => {
     updateTitle();
@@ -51,7 +51,7 @@ $(document).ready(function () {
     copyLink.style.cursor = "pointer";
 
     copyLink.addEventListener("click", (e) => {
-      const finalUrl = `${serverUrl}Extension/single.php?vid=${url}`;
+      const finalUrl = `${serverUrl}Dashboard/single.php?vid=${url}`;
       e.preventDefault();
       copyMess.classList.add("active");
       navigator.clipboard.writeText(finalUrl);
